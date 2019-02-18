@@ -1,0 +1,563 @@
+
+------------------------------------------------------------
+All tasks runnable from root project
+------------------------------------------------------------
+
+Android tasks
+-------------
+app:androidDependencies - Displays the Android dependencies of the project.
+flutter:androidDependencies - Displays the Android dependencies of the project.
+app:signingReport - Displays the signing info for each variant.
+flutter:signingReport - Displays the signing info for each variant.
+app:sourceSets - Prints out all the source sets defined in this project.
+flutter:sourceSets - Prints out all the source sets defined in this project.
+
+Build tasks
+-----------
+annoprocessor:assemble - Assembles the outputs of this project.
+app:assemble - Assembles all variants of all applications and secondary packages.
+flutter:assemble - Assembles all variants of all applications and secondary packages.
+app:assembleAndroidTest - Assembles all the Test applications.
+flutter:assembleAndroidTest - Assembles all the Test applications.
+app:assembleDebug - Assembles all Debug builds.
+flutter:assembleDebug - Assembles all Debug builds.
+flutter:assembleDynamicProfile - Assembles all DynamicProfile builds.
+flutter:assembleDynamicRelease - Assembles all DynamicRelease builds.
+flutter:assembleProfile - Assembles all Profile builds.
+app:assembleRelease - Assembles all Release builds.
+flutter:assembleRelease - Assembles all Release builds.
+annoprocessor:build - Assembles and tests this project.
+app:build - Assembles and tests this project.
+flutter:build - Assembles and tests this project.
+annoprocessor:buildDependents - Assembles and tests this project and all projects that depend on it.
+app:buildDependents - Assembles and tests this project and all projects that depend on it.
+flutter:buildDependents - Assembles and tests this project and all projects that depend on it.
+annoprocessor:buildNeeded - Assembles and tests this project and all projects it depends on.
+app:buildNeeded - Assembles and tests this project and all projects it depends on.
+flutter:buildNeeded - Assembles and tests this project and all projects it depends on.
+annoprocessor:classes - Assembles main classes.
+annoprocessor:clean - Deletes the build directory.
+app:clean - Deletes the build directory.
+flutter:clean - Deletes the build directory.
+app:cleanBuildCache - Deletes the build cache directory.
+flutter:cleanBuildCache - Deletes the build cache directory.
+app:compileDebugAndroidTestSources
+flutter:compileDebugAndroidTestSources
+app:compileDebugSources
+flutter:compileDebugSources
+app:compileDebugUnitTestSources
+flutter:compileDebugUnitTestSources
+flutter:compileDynamicProfileSources
+flutter:compileDynamicProfileUnitTestSources
+flutter:compileDynamicReleaseSources
+flutter:compileDynamicReleaseUnitTestSources
+flutter:compileProfileSources
+flutter:compileProfileUnitTestSources
+app:compileReleaseSources
+flutter:compileReleaseSources
+app:compileReleaseUnitTestSources
+flutter:compileReleaseUnitTestSources
+flutter:extractDebugAnnotations - Extracts Android annotations for the debug variant into the archive file
+flutter:extractDynamicProfileAnnotations - Extracts Android annotations for the dynamicProfile variant into the archive file
+flutter:extractDynamicReleaseAnnotations - Extracts Android annotations for the dynamicRelease variant into the archive file
+flutter:extractProfileAnnotations - Extracts Android annotations for the profile variant into the archive file
+flutter:extractReleaseAnnotations - Extracts Android annotations for the release variant into the archive file
+annoprocessor:jar - Assembles a jar archive containing the main classes.
+app:mockableAndroidJar - Creates a version of android.jar that's suitable for unit tests.
+flutter:mockableAndroidJar - Creates a version of android.jar that's suitable for unit tests.
+annoprocessor:testClasses - Assembles test classes.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Documentation tasks
+-------------------
+annoprocessor:javadoc - Generates Javadoc API documentation for the main source code.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'FurtherRun'.
+annoprocessor:buildEnvironment - Displays all buildscript dependencies declared in project ':annoprocessor'.
+app:buildEnvironment - Displays all buildscript dependencies declared in project ':app'.
+flutter:buildEnvironment - Displays all buildscript dependencies declared in project ':flutter'.
+components - Displays the components produced by root project 'FurtherRun'. [incubating]
+annoprocessor:components - Displays the components produced by project ':annoprocessor'. [incubating]
+app:components - Displays the components produced by project ':app'. [incubating]
+flutter:components - Displays the components produced by project ':flutter'. [incubating]
+dependencies - Displays all dependencies declared in root project 'FurtherRun'.
+annoprocessor:dependencies - Displays all dependencies declared in project ':annoprocessor'.
+app:dependencies - Displays all dependencies declared in project ':app'.
+flutter:dependencies - Displays all dependencies declared in project ':flutter'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'FurtherRun'.
+annoprocessor:dependencyInsight - Displays the insight into a specific dependency in project ':annoprocessor'.
+app:dependencyInsight - Displays the insight into a specific dependency in project ':app'.
+flutter:dependencyInsight - Displays the insight into a specific dependency in project ':flutter'.
+dependentComponents - Displays the dependent components of components in root project 'FurtherRun'. [incubating]
+annoprocessor:dependentComponents - Displays the dependent components of components in project ':annoprocessor'. [incubating]
+app:dependentComponents - Displays the dependent components of components in project ':app'. [incubating]
+flutter:dependentComponents - Displays the dependent components of components in project ':flutter'. [incubating]
+help - Displays a help message.
+annoprocessor:help - Displays a help message.
+app:help - Displays a help message.
+flutter:help - Displays a help message.
+model - Displays the configuration model of root project 'FurtherRun'. [incubating]
+annoprocessor:model - Displays the configuration model of project ':annoprocessor'. [incubating]
+app:model - Displays the configuration model of project ':app'. [incubating]
+flutter:model - Displays the configuration model of project ':flutter'. [incubating]
+projects - Displays the sub-projects of root project 'FurtherRun'.
+annoprocessor:projects - Displays the sub-projects of project ':annoprocessor'.
+app:projects - Displays the sub-projects of project ':app'.
+flutter:projects - Displays the sub-projects of project ':flutter'.
+properties - Displays the properties of root project 'FurtherRun'.
+annoprocessor:properties - Displays the properties of project ':annoprocessor'.
+app:properties - Displays the properties of project ':app'.
+flutter:properties - Displays the properties of project ':flutter'.
+tasks - Displays the tasks runnable from root project 'FurtherRun' (some of the displayed tasks may belong to subprojects).
+annoprocessor:tasks - Displays the tasks runnable from project ':annoprocessor'.
+app:tasks - Displays the tasks runnable from project ':app'.
+flutter:tasks - Displays the tasks runnable from project ':flutter'.
+
+Install tasks
+-------------
+app:installDebug - Installs the Debug build.
+app:installDebugAndroidTest - Installs the android (on device) tests for the Debug build.
+flutter:installDebugAndroidTest - Installs the android (on device) tests for the Debug build.
+app:uninstallAll - Uninstall all applications.
+flutter:uninstallAll - Uninstall all applications.
+app:uninstallDebug - Uninstalls the Debug build.
+app:uninstallDebugAndroidTest - Uninstalls the android (on device) tests for the Debug build.
+flutter:uninstallDebugAndroidTest - Uninstalls the android (on device) tests for the Debug build.
+app:uninstallRelease - Uninstalls the Release build.
+
+Verification tasks
+------------------
+annoprocessor:check - Runs all checks.
+app:check - Runs all checks.
+flutter:check - Runs all checks.
+app:connectedAndroidTest - Installs and runs instrumentation tests for all flavors on connected devices.
+flutter:connectedAndroidTest - Installs and runs instrumentation tests for all flavors on connected devices.
+app:connectedCheck - Runs all device checks on currently connected devices.
+flutter:connectedCheck - Runs all device checks on currently connected devices.
+app:connectedDebugAndroidTest - Installs and runs the tests for debug on connected devices.
+flutter:connectedDebugAndroidTest - Installs and runs the tests for debug on connected devices.
+app:deviceAndroidTest - Installs and runs instrumentation tests using all Device Providers.
+flutter:deviceAndroidTest - Installs and runs instrumentation tests using all Device Providers.
+app:deviceCheck - Runs all device checks using Device Providers and Test Servers.
+flutter:deviceCheck - Runs all device checks using Device Providers and Test Servers.
+app:lint - Runs lint on all variants.
+flutter:lint - Runs lint on all variants.
+app:lintDebug - Runs lint on the Debug build.
+flutter:lintDebug - Runs lint on the Debug build.
+flutter:lintDynamicProfile - Runs lint on the DynamicProfile build.
+flutter:lintDynamicRelease - Runs lint on the DynamicRelease build.
+flutter:lintProfile - Runs lint on the Profile build.
+app:lintRelease - Runs lint on the Release build.
+flutter:lintRelease - Runs lint on the Release build.
+app:lintVitalRelease - Runs lint on just the fatal issues in the release build.
+annoprocessor:test - Runs the unit tests.
+app:test - Run unit tests for all variants.
+flutter:test - Run unit tests for all variants.
+app:testDebugUnitTest - Run unit tests for the debug build.
+flutter:testDebugUnitTest - Run unit tests for the debug build.
+flutter:testDynamicProfileUnitTest - Run unit tests for the dynamicProfile build.
+flutter:testDynamicReleaseUnitTest - Run unit tests for the dynamicRelease build.
+flutter:testProfileUnitTest - Run unit tests for the profile build.
+app:testReleaseUnitTest - Run unit tests for the release build.
+flutter:testReleaseUnitTest - Run unit tests for the release build.
+
+Other tasks
+-----------
+app:assembleDebugAndroidTest
+flutter:assembleDebugAndroidTest
+app:assembleDebugUnitTest
+flutter:assembleDebugUnitTest
+flutter:assembleDefault
+flutter:assembleDynamicProfileUnitTest
+flutter:assembleDynamicReleaseUnitTest
+flutter:assembleProfileUnitTest
+app:assembleReleaseUnitTest
+flutter:assembleReleaseUnitTest
+app:bundleAppClassesDebug
+app:bundleAppClassesDebugAndroidTest
+app:bundleAppClassesDebugUnitTest
+app:bundleAppClassesRelease
+app:bundleAppClassesReleaseUnitTest
+flutter:bundleDebug - Assembles a bundle containing the library in debug.
+app:bundleDebugAndroidTestResources
+flutter:bundleDebugAndroidTestResources
+app:bundleDebugResources
+flutter:bundleDynamicProfile - Assembles a bundle containing the library in dynamicProfile.
+flutter:bundleDynamicRelease - Assembles a bundle containing the library in dynamicRelease.
+flutter:bundleProfile - Assembles a bundle containing the library in profile.
+flutter:bundleRelease - Assembles a bundle containing the library in release.
+app:bundleReleaseResources
+app:checkDebugManifest
+flutter:checkDebugManifest
+flutter:checkDynamicProfileManifest
+flutter:checkDynamicReleaseManifest
+flutter:checkProfileManifest
+app:checkReleaseManifest
+flutter:checkReleaseManifest
+clean
+flutter:cleanPackageDebugAssets
+flutter:cleanPackageDynamicProfileAssets
+flutter:cleanPackageDynamicReleaseAssets
+flutter:cleanPackageProfileAssets
+flutter:cleanPackageReleaseAssets
+app:compileDebugAidl
+flutter:compileDebugAidl
+app:compileDebugAndroidTestAidl
+flutter:compileDebugAndroidTestAidl
+app:compileDebugAndroidTestJavaWithJavac
+flutter:compileDebugAndroidTestJavaWithJavac
+app:compileDebugAndroidTestNdk
+flutter:compileDebugAndroidTestNdk
+app:compileDebugAndroidTestRenderscript
+flutter:compileDebugAndroidTestRenderscript
+app:compileDebugAndroidTestShaders
+flutter:compileDebugAndroidTestShaders
+app:compileDebugJavaWithJavac
+flutter:compileDebugJavaWithJavac
+app:compileDebugNdk
+flutter:compileDebugNdk
+app:compileDebugRenderscript
+flutter:compileDebugRenderscript
+app:compileDebugShaders
+flutter:compileDebugShaders
+app:compileDebugUnitTestJavaWithJavac
+flutter:compileDebugUnitTestJavaWithJavac
+flutter:compileDynamicProfileAidl
+flutter:compileDynamicProfileJavaWithJavac
+flutter:compileDynamicProfileNdk
+flutter:compileDynamicProfileRenderscript
+flutter:compileDynamicProfileShaders
+flutter:compileDynamicProfileUnitTestJavaWithJavac
+flutter:compileDynamicReleaseAidl
+flutter:compileDynamicReleaseJavaWithJavac
+flutter:compileDynamicReleaseNdk
+flutter:compileDynamicReleaseRenderscript
+flutter:compileDynamicReleaseShaders
+flutter:compileDynamicReleaseUnitTestJavaWithJavac
+annoprocessor:compileJava - Compiles main Java source.
+app:compileLint
+flutter:compileLint
+flutter:compileProfileAidl
+flutter:compileProfileJavaWithJavac
+flutter:compileProfileNdk
+flutter:compileProfileRenderscript
+flutter:compileProfileShaders
+flutter:compileProfileUnitTestJavaWithJavac
+app:compileReleaseAidl
+flutter:compileReleaseAidl
+app:compileReleaseJavaWithJavac
+flutter:compileReleaseJavaWithJavac
+app:compileReleaseNdk
+flutter:compileReleaseNdk
+app:compileReleaseRenderscript
+flutter:compileReleaseRenderscript
+app:compileReleaseShaders
+flutter:compileReleaseShaders
+app:compileReleaseUnitTestJavaWithJavac
+flutter:compileReleaseUnitTestJavaWithJavac
+annoprocessor:compileTestJava - Compiles test Java source.
+app:consumeConfigAttr
+flutter:consumeConfigAttr
+flutter:copyFlutterAssetsDebug
+flutter:copyFlutterAssetsDynamicProfile
+flutter:copyFlutterAssetsDynamicRelease
+flutter:copyFlutterAssetsProfile
+flutter:copyFlutterAssetsRelease
+app:createDebugCompatibleScreenManifests
+flutter:createFullJarDebug
+flutter:createFullJarDynamicProfile
+flutter:createFullJarDynamicRelease
+flutter:createFullJarProfile
+flutter:createFullJarRelease
+app:createReleaseCompatibleScreenManifests
+app:extractProguardFiles
+flutter:extractProguardFiles
+flutter:flutterBuildDebug
+flutter:flutterBuildDynamicProfile
+flutter:flutterBuildDynamicRelease
+flutter:flutterBuildProfile
+flutter:flutterBuildRelease
+flutter:flutterBuildX86Jar
+app:generateDebugAndroidTestAssets
+flutter:generateDebugAndroidTestAssets
+app:generateDebugAndroidTestBuildConfig
+flutter:generateDebugAndroidTestBuildConfig
+app:generateDebugAndroidTestResources
+flutter:generateDebugAndroidTestResources
+app:generateDebugAndroidTestResValues
+flutter:generateDebugAndroidTestResValues
+app:generateDebugAndroidTestSources
+flutter:generateDebugAndroidTestSources
+app:generateDebugAssets
+flutter:generateDebugAssets
+app:generateDebugBuildConfig
+flutter:generateDebugBuildConfig
+app:generateDebugResources
+flutter:generateDebugResources
+app:generateDebugResValues
+flutter:generateDebugResValues
+flutter:generateDebugRFile
+app:generateDebugSources
+flutter:generateDebugSources
+flutter:generateDynamicProfileAssets
+flutter:generateDynamicProfileBuildConfig
+flutter:generateDynamicProfileResources
+flutter:generateDynamicProfileResValues
+flutter:generateDynamicProfileRFile
+flutter:generateDynamicProfileSources
+flutter:generateDynamicReleaseAssets
+flutter:generateDynamicReleaseBuildConfig
+flutter:generateDynamicReleaseResources
+flutter:generateDynamicReleaseResValues
+flutter:generateDynamicReleaseRFile
+flutter:generateDynamicReleaseSources
+flutter:generateProfileAssets
+flutter:generateProfileBuildConfig
+flutter:generateProfileResources
+flutter:generateProfileResValues
+flutter:generateProfileRFile
+flutter:generateProfileSources
+app:generateReleaseAssets
+flutter:generateReleaseAssets
+app:generateReleaseBuildConfig
+flutter:generateReleaseBuildConfig
+app:generateReleaseResources
+flutter:generateReleaseResources
+app:generateReleaseResValues
+flutter:generateReleaseResValues
+flutter:generateReleaseRFile
+app:generateReleaseSources
+flutter:generateReleaseSources
+app:javaPreCompileDebug
+flutter:javaPreCompileDebug
+app:javaPreCompileDebugAndroidTest
+flutter:javaPreCompileDebugAndroidTest
+app:javaPreCompileDebugUnitTest
+flutter:javaPreCompileDebugUnitTest
+flutter:javaPreCompileDynamicProfile
+flutter:javaPreCompileDynamicProfileUnitTest
+flutter:javaPreCompileDynamicRelease
+flutter:javaPreCompileDynamicReleaseUnitTest
+flutter:javaPreCompileProfile
+flutter:javaPreCompileProfileUnitTest
+app:javaPreCompileRelease
+flutter:javaPreCompileRelease
+app:javaPreCompileReleaseUnitTest
+flutter:javaPreCompileReleaseUnitTest
+app:mainApkListPersistenceDebug
+app:mainApkListPersistenceDebugAndroidTest
+flutter:mainApkListPersistenceDebugAndroidTest
+app:mainApkListPersistenceRelease
+app:mergeDebugAndroidTestAssets
+flutter:mergeDebugAndroidTestAssets
+app:mergeDebugAndroidTestJniLibFolders
+flutter:mergeDebugAndroidTestJniLibFolders
+app:mergeDebugAndroidTestResources
+flutter:mergeDebugAndroidTestResources
+app:mergeDebugAndroidTestShaders
+flutter:mergeDebugAndroidTestShaders
+app:mergeDebugAssets
+flutter:mergeDebugAssets
+flutter:mergeDebugConsumerProguardFiles
+app:mergeDebugJniLibFolders
+flutter:mergeDebugJniLibFolders
+app:mergeDebugResources
+flutter:mergeDebugResources
+app:mergeDebugShaders
+flutter:mergeDebugShaders
+flutter:mergeDynamicProfileAssets
+flutter:mergeDynamicProfileConsumerProguardFiles
+flutter:mergeDynamicProfileJniLibFolders
+flutter:mergeDynamicProfileResources
+flutter:mergeDynamicProfileShaders
+flutter:mergeDynamicReleaseAssets
+flutter:mergeDynamicReleaseConsumerProguardFiles
+flutter:mergeDynamicReleaseJniLibFolders
+flutter:mergeDynamicReleaseResources
+flutter:mergeDynamicReleaseShaders
+flutter:mergeProfileAssets
+flutter:mergeProfileConsumerProguardFiles
+flutter:mergeProfileJniLibFolders
+flutter:mergeProfileResources
+flutter:mergeProfileShaders
+app:mergeReleaseAssets
+flutter:mergeReleaseAssets
+flutter:mergeReleaseConsumerProguardFiles
+app:mergeReleaseJniLibFolders
+flutter:mergeReleaseJniLibFolders
+app:mergeReleaseResources
+flutter:mergeReleaseResources
+app:mergeReleaseShaders
+flutter:mergeReleaseShaders
+app:packageDebug
+app:packageDebugAndroidTest
+flutter:packageDebugAndroidTest
+flutter:packageDebugAssets
+flutter:packageDebugRenderscript
+flutter:packageDebugResources
+flutter:packageDynamicProfileAssets
+flutter:packageDynamicProfileRenderscript
+flutter:packageDynamicProfileResources
+flutter:packageDynamicReleaseAssets
+flutter:packageDynamicReleaseRenderscript
+flutter:packageDynamicReleaseResources
+flutter:packageProfileAssets
+flutter:packageProfileRenderscript
+flutter:packageProfileResources
+app:packageRelease
+flutter:packageReleaseAssets
+flutter:packageReleaseRenderscript
+flutter:packageReleaseResources
+app:platformAttrExtractor
+flutter:platformAttrExtractor
+app:preBuild
+flutter:preBuild
+app:preDebugAndroidTestBuild
+flutter:preDebugAndroidTestBuild
+app:preDebugBuild
+flutter:preDebugBuild
+app:preDebugUnitTestBuild
+flutter:preDebugUnitTestBuild
+flutter:preDynamicProfileBuild
+flutter:preDynamicProfileUnitTestBuild
+flutter:preDynamicReleaseBuild
+flutter:preDynamicReleaseUnitTestBuild
+app:prepareLintJar
+flutter:prepareLintJar
+app:preparePUBLISHED_DEXDebugAndroidTestForPublishing
+flutter:preparePUBLISHED_DEXDebugAndroidTestForPublishing
+app:preparePUBLISHED_DEXDebugForPublishing
+app:preparePUBLISHED_DEXReleaseForPublishing
+app:preparePUBLISHED_JAVA_RESDebugAndroidTestForPublishing
+flutter:preparePUBLISHED_JAVA_RESDebugAndroidTestForPublishing
+app:preparePUBLISHED_JAVA_RESDebugForPublishing
+app:preparePUBLISHED_JAVA_RESReleaseForPublishing
+app:preparePUBLISHED_NATIVE_LIBSDebugAndroidTestForPublishing
+flutter:preparePUBLISHED_NATIVE_LIBSDebugAndroidTestForPublishing
+app:preparePUBLISHED_NATIVE_LIBSDebugForPublishing
+app:preparePUBLISHED_NATIVE_LIBSReleaseForPublishing
+flutter:preProfileBuild
+flutter:preProfileUnitTestBuild
+app:preReleaseBuild
+flutter:preReleaseBuild
+app:preReleaseUnitTestBuild
+flutter:preReleaseUnitTestBuild
+app:processDebugAndroidTestJavaRes
+flutter:processDebugAndroidTestJavaRes
+app:processDebugAndroidTestManifest
+flutter:processDebugAndroidTestManifest
+app:processDebugAndroidTestResources
+flutter:processDebugAndroidTestResources
+app:processDebugJavaRes
+flutter:processDebugJavaRes
+app:processDebugManifest
+flutter:processDebugManifest
+app:processDebugResources
+app:processDebugUnitTestJavaRes
+flutter:processDebugUnitTestJavaRes
+flutter:processDynamicProfileJavaRes
+flutter:processDynamicProfileManifest
+flutter:processDynamicProfileUnitTestJavaRes
+flutter:processDynamicReleaseJavaRes
+flutter:processDynamicReleaseManifest
+flutter:processDynamicReleaseUnitTestJavaRes
+flutter:processProfileJavaRes
+flutter:processProfileManifest
+flutter:processProfileUnitTestJavaRes
+app:processReleaseJavaRes
+flutter:processReleaseJavaRes
+app:processReleaseManifest
+flutter:processReleaseManifest
+app:processReleaseResources
+app:processReleaseUnitTestJavaRes
+flutter:processReleaseUnitTestJavaRes
+annoprocessor:processResources - Processes main resources.
+annoprocessor:processTestResources - Processes test resources.
+app:reportBuildArtifactsDebug
+flutter:reportBuildArtifactsDebug
+flutter:reportBuildArtifactsDynamicProfile
+flutter:reportBuildArtifactsDynamicRelease
+flutter:reportBuildArtifactsProfile
+app:reportBuildArtifactsRelease
+flutter:reportBuildArtifactsRelease
+app:resolveConfigAttr
+flutter:resolveConfigAttr
+app:splitsDiscoveryTaskDebug
+app:splitsDiscoveryTaskRelease
+flutter:transformClassesAndResourcesWithPrepareIntermediateJarsForDebug
+flutter:transformClassesAndResourcesWithPrepareIntermediateJarsForDynamicProfile
+flutter:transformClassesAndResourcesWithPrepareIntermediateJarsForDynamicRelease
+flutter:transformClassesAndResourcesWithPrepareIntermediateJarsForProfile
+flutter:transformClassesAndResourcesWithPrepareIntermediateJarsForRelease
+flutter:transformClassesAndResourcesWithSyncLibJarsForDebug
+flutter:transformClassesAndResourcesWithSyncLibJarsForDynamicProfile
+flutter:transformClassesAndResourcesWithSyncLibJarsForDynamicRelease
+flutter:transformClassesAndResourcesWithSyncLibJarsForProfile
+flutter:transformClassesAndResourcesWithSyncLibJarsForRelease
+app:transformClassesWithDexBuilderForDebug
+app:transformClassesWithDexBuilderForDebugAndroidTest
+flutter:transformClassesWithDexBuilderForDebugAndroidTest
+app:transformClassesWithDexBuilderForRelease
+app:transformDexArchiveWithDexMergerForDebug
+app:transformDexArchiveWithDexMergerForDebugAndroidTest
+flutter:transformDexArchiveWithDexMergerForDebugAndroidTest
+app:transformDexArchiveWithDexMergerForRelease
+app:transformDexArchiveWithExternalLibsDexMergerForDebug
+app:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest
+flutter:transformDexArchiveWithExternalLibsDexMergerForDebugAndroidTest
+app:transformDexArchiveWithExternalLibsDexMergerForRelease
+flutter:transformNativeLibsWithIntermediateJniLibsForDebug
+flutter:transformNativeLibsWithIntermediateJniLibsForDynamicProfile
+flutter:transformNativeLibsWithIntermediateJniLibsForDynamicRelease
+flutter:transformNativeLibsWithIntermediateJniLibsForProfile
+flutter:transformNativeLibsWithIntermediateJniLibsForRelease
+app:transformNativeLibsWithMergeJniLibsForDebug
+flutter:transformNativeLibsWithMergeJniLibsForDebug
+app:transformNativeLibsWithMergeJniLibsForDebugAndroidTest
+flutter:transformNativeLibsWithMergeJniLibsForDebugAndroidTest
+flutter:transformNativeLibsWithMergeJniLibsForDynamicProfile
+flutter:transformNativeLibsWithMergeJniLibsForDynamicRelease
+flutter:transformNativeLibsWithMergeJniLibsForProfile
+app:transformNativeLibsWithMergeJniLibsForRelease
+flutter:transformNativeLibsWithMergeJniLibsForRelease
+app:transformNativeLibsWithStripDebugSymbolForDebug
+flutter:transformNativeLibsWithStripDebugSymbolForDebug
+flutter:transformNativeLibsWithStripDebugSymbolForDynamicProfile
+flutter:transformNativeLibsWithStripDebugSymbolForDynamicRelease
+flutter:transformNativeLibsWithStripDebugSymbolForProfile
+app:transformNativeLibsWithStripDebugSymbolForRelease
+flutter:transformNativeLibsWithStripDebugSymbolForRelease
+flutter:transformNativeLibsWithSyncJniLibsForDebug
+flutter:transformNativeLibsWithSyncJniLibsForDynamicProfile
+flutter:transformNativeLibsWithSyncJniLibsForDynamicRelease
+flutter:transformNativeLibsWithSyncJniLibsForProfile
+flutter:transformNativeLibsWithSyncJniLibsForRelease
+app:transformResourcesWithMergeJavaResForDebug
+flutter:transformResourcesWithMergeJavaResForDebug
+app:transformResourcesWithMergeJavaResForDebugAndroidTest
+flutter:transformResourcesWithMergeJavaResForDebugAndroidTest
+app:transformResourcesWithMergeJavaResForDebugUnitTest
+flutter:transformResourcesWithMergeJavaResForDebugUnitTest
+flutter:transformResourcesWithMergeJavaResForDynamicProfile
+flutter:transformResourcesWithMergeJavaResForDynamicProfileUnitTest
+flutter:transformResourcesWithMergeJavaResForDynamicRelease
+flutter:transformResourcesWithMergeJavaResForDynamicReleaseUnitTest
+flutter:transformResourcesWithMergeJavaResForProfile
+flutter:transformResourcesWithMergeJavaResForProfileUnitTest
+app:transformResourcesWithMergeJavaResForRelease
+flutter:transformResourcesWithMergeJavaResForRelease
+app:transformResourcesWithMergeJavaResForReleaseUnitTest
+flutter:transformResourcesWithMergeJavaResForReleaseUnitTest
+app:validateSigningDebug
+app:validateSigningDebugAndroidTest
+flutter:validateSigningDebugAndroidTest
+flutter:verifyReleaseResources
+app:writeDebugApplicationId
+app:writeReleaseApplicationId
+1 actionable task: 1 executed

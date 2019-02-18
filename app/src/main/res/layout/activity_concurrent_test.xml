@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.further.run.customview.LetterIndicator
+        android:id="@+id/thread_pool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/thread_pool"
+        android:padding="10dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/thread_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="@string/thread_lock" />
+
+    <TextView
+        android:id="@+id/aft_arrays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/aft2_arrays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="@string/app_name" />
+
+    <LinearLayout
+        android:id="@+id/linner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+</LinearLayout>
