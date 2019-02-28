@@ -41,8 +41,16 @@ public class AlgorithmActivity extends AppCompatActivity implements View.OnClick
     private void generateEvent() {
         Random random = new Random();
         random.setSeed(System.currentTimeMillis());
+        int[] x = new int[100];
+        for (int i = 0; i < 99; i++) {
+            x[i] = i;
+        }
         for (int i = 0; i < 20; i++) {
-            arrays[i] = random.nextInt(100);
+            int ran = random.nextInt(100 - i);
+            int temp = x[ran];
+            x[ran] = x[99 - i];
+            x[99 - i] = temp;
+            arrays[i] = x[99 - i];
         }
         currentArraysTV.setText(displayArray(arrays));
 
@@ -55,7 +63,9 @@ public class AlgorithmActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void sort2Event(int[] arrays) {
-        InsertionSort.sort(arrays);
+//        InsertionSort.sort(arrays);
+//        MergeSort.sort(arrays);
+        new HeapSort(arrays).sort();
         aft2ArraysTV.setText(displayArray(arrays));
     }
 

@@ -3,7 +3,7 @@ package com.further.run.algorithm;
 /**
  * Created by Hukuan
  * 2018/4/26.
- * 插入排序
+ * 希尔排序
  * 根据步长由长到短分组，进行排序，直到步长为1为止，属于插入排序的一种。
  */
 public class ShellSort {
