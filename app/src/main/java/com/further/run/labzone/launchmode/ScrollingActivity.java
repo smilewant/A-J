@@ -47,7 +47,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
                 }
                 if (flutterFragment == null) {
-                    flutterFragment = Flutter.createFragment("", 2);
+                    flutterFragment = Flutter.createFragment("");
                 }
 
                 if (currentFragment == null) {

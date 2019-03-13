@@ -1,9 +1,9 @@
-package com.further.run.algorithm;
+package com.further.run.algorithm.sort;
 
 /**
  * Created by Hukuan
  * 基数排序
- * MSD LSD
+ * MSD LSD wrong
  */
 public class RadixSort {
 

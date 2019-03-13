@@ -1,6 +1,10 @@
 package com.further.run.concurrent;
 
+import com.further.run.algorithm.FindNumber;
+import com.further.run.algorithm.GenerateData;
+import com.further.run.algorithm.Solution;
 import com.further.run.algorithm.ThreeSum;
+import com.further.run.algorithm.sort.HeapSort;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -22,13 +26,21 @@ class Test {
     static Thread t2;
 
     public static void main(String[] args) {
+        int[] arrd = {2,1};
+//        new HeapSort(arrd).sort();
+        Solution solution = new Solution();
 
-        System.out.println(String.format("%.2f", 5.00000001d));
-        System.out.println("领\u0020\u0020\u0020\u0020券");
-        System.out.println("领领领券");
-        int[] nums = new int[] {-1, 0, 1, 2, -1, -4};
-        ThreeSum threeSum = new ThreeSum();
-        threeSum.threeSum(nums);
+        System.out.print("so " + solution.findKthLargest(arrd, 2) + "\n");
+//        int[] a = GenerateData.generateEventR(20);
+//        GenerateData.displayArray(a);
+//        FindNumber.find(a);
+//
+//        System.out.println(String.format("%.2f", 5.00000001d));
+//        System.out.println("领\u0020\u0020\u0020\u0020券");
+//        System.out.println("领领领券");
+//        int[] nums = new int[] {-1, 0, 1, 2, -1, -4};
+//        ThreeSum threeSum = new ThreeSum();
+//        threeSum.threeSum(nums);
 //        showFiles(new File("D:"), "");
 //        List<String> imageList = new ArrayList<>();
 //        imageList.add("1");

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.further.run.R;
+import com.further.run.algorithm.sort.BuckSort;
+import com.further.run.algorithm.sort.QuickSortUtil;
 
 import java.util.Random;
 
@@ -15,11 +17,12 @@ import java.util.Random;
  * 2018/4/26.
  */
 public class AlgorithmActivity extends AppCompatActivity implements View.OnClickListener {
-    private int[] arrays = new int[20];
+    private int[] arrays = new int[SIZE];
     private TextView generateTV;
     private TextView currentArraysTV;
     private TextView aftArraysTV;
     private TextView aft2ArraysTV;
+    private final static int SIZE = 10;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +48,7 @@ public class AlgorithmActivity extends AppCompatActivity implements View.OnClick
         for (int i = 0; i < 99; i++) {
             x[i] = i;
         }
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < SIZE; i++) {
             int ran = random.nextInt(100 - i);
             int temp = x[ran];
             x[ran] = x[99 - i];
@@ -65,7 +68,8 @@ public class AlgorithmActivity extends AppCompatActivity implements View.OnClick
     private void sort2Event(int[] arrays) {
 //        InsertionSort.sort(arrays);
 //        MergeSort.sort(arrays);
-        new HeapSort(arrays).sort();
+        BuckSort.sort(arrays);
+//        new HeapSort(arrays).sort();
         aft2ArraysTV.setText(displayArray(arrays));
     }
 

@@ -8,11 +8,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: any
+  cookie_jar: ^1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  connectivity: any
 
 flutter:
   uses-material-design: true

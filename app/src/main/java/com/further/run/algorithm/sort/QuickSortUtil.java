@@ -1,4 +1,4 @@
-package com.further.run.algorithm;
+package com.further.run.algorithm.sort;
 
 import android.util.Log;
 
