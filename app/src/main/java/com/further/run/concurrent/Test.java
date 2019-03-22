@@ -1,12 +1,12 @@
 package com.further.run.concurrent;
 
-import com.further.run.algorithm.FindNumber;
-import com.further.run.algorithm.GenerateData;
-import com.further.run.algorithm.Solution;
-import com.further.run.algorithm.ThreeSum;
-import com.further.run.algorithm.sort.HeapSort;
+import com.further.run.algorithm.leetcode.Solution26;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -25,12 +25,31 @@ class Test {
     static Thread t1;
     static Thread t2;
 
-    public static void main(String[] args) {
-        int[] arrd = {2,1};
-//        new HeapSort(arrd).sort();
-        Solution solution = new Solution();
+    public static String code(String str) throws NoSuchAlgorithmException {
+        MessageDigest alga;
+        String myinfo = str;
+        alga = MessageDigest.getInstance("MD5");
+        alga.update(myinfo.getBytes());
+        byte[] digesta = alga.digest();
+        String hs = "";
+        String stmp = "";
+        for (int n = 0; n < digesta.length; n++) {
+            stmp = (java.lang.Integer.toHexString(digesta[n] & 0XFF));
+            if (stmp.length() == 1)
+                hs = hs + "0" + stmp;
+            else
+                hs = hs + stmp;
+        }
+        return hs.toUpperCase();
+    }
 
-        System.out.print("so " + solution.findKthLargest(arrd, 2) + "\n");
+    public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        int[] arrd = {0, 2, 1, 1, 4, 1, 1, 2, 3, 4};
+//        new HeapSort(arrd).sort();
+        Solution26 solution = new Solution26();
+        System.out.print(URLEncoder.encode("Redmi Note 7+".replaceAll("\\s*", ""), "UTF-8"));
+
+        System.out.print("so " + code(URLEncoder.encode("Redmi Note 7+".replaceAll("\\s*", ""), "UTF-8")) + "\n");
 //        int[] a = GenerateData.generateEventR(20);
 //        GenerateData.displayArray(a);
 //        FindNumber.find(a);
@@ -175,7 +194,7 @@ class Test {
 
     }
 
-    private static void showFiles(File file, String blank){
+    private static void showFiles(File file, String blank) {
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             for (File f : files) {

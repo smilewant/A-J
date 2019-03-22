@@ -22,8 +22,8 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        startActivity(new Intent(SplashActivity.this, MainActivity.class));
-//        finish();
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        finish();
         setContentView(R.layout.activity_splash);
         splashMediaView = findViewById(R.id.splash_media_view);
 

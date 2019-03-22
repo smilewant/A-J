@@ -1,6 +1,7 @@
 package com.further.run.main;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,10 @@ import com.further.run.log.LogUtil;
 import com.further.run.util.ProjectUtil;
 import com.further.run.util.RVAdapter;
 import com.further.run.util.RVHolder;
+
+import static android.os.Build.CPU_ABI;
+import static android.os.Build.VERSION.SDK_INT;
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
 
 /**
  * Created by Hukuan
@@ -64,8 +69,28 @@ public class MainActivity extends AppCompatActivity  {
             }
         };
         mMainRV.setAdapter(mRvAdapter);
+
+//        isARMv7Compatible();
+        LogUtil.e("isARMv7Compatible 1 " + Boolean.toString(isARMv7Compatible()));
     }
 
 
-
+    public static boolean isARMv7Compatible() {
+        try {
+            if (SDK_INT >= LOLLIPOP) {
+                for (String abi : Build.SUPPORTED_32_BIT_ABIS) {
+                    if (abi.equals("armeabi-v7a")) {
+                        return true;
+                    }
+                }
+            } else {
+                if (CPU_ABI.equals("armeabi-v7a") || CPU_ABI.equals("arm64-v8a")) {
+                    return true;
+                }
+            }
+        } catch (Throwable e) {
+            LogUtil.e("isARMv7Compatible " + e.getMessage());
+        }
+        return false;
+    }
 }

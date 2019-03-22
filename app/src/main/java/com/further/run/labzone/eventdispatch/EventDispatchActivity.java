@@ -25,7 +25,7 @@ public class EventDispatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_dispatch);
         initView();
         outDispatch();
-        innerDispatch();
+//        innerDispatch();
     }
 
     private void initView() {

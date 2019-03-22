@@ -89,9 +89,12 @@ public class CustomDispatchView extends View {
         } else {
             paint.setColor(getResources().getColor(R.color.color_0000000));
         }
-        canvas.drawCircle(200 + x, 200 + y, 25, paint);
-        canvas.drawCircle(100 + x, 100 + y, 25, paint);
-        canvas.drawCircle(50 + x, 50 + y, 25, paint);
+        canvas.drawCircle(200 + x, 200 + y, 50, paint);
+        canvas.drawCircle(100 + x, 100 + y, 50, paint);
+        canvas.drawCircle(50 + x, 50 + y, 50, paint);
+        paint.setTextSize(122);
+        canvas.drawText("大", 200, 200 , paint);
+        this.invalidate();
         super.onDraw(canvas);
     }
 

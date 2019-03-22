@@ -7,10 +7,6 @@ import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
 
 import io.flutter.plugin.common.BasicMessageChannel;
 import io.flutter.plugin.common.StringCodec;
@@ -27,8 +23,6 @@ import io.flutter.plugins.GeneratedPluginRegistrant;
  * DO NOT EDIT.</p>
  */
 public final class Flutter {
-  private static FlutterView flutterView;
-
   private Flutter() {
     // to prevent instantiation
   }
@@ -59,38 +53,6 @@ public final class Flutter {
     args.putString(FlutterFragment.ARG_ROUTE, initialRoute);
     fragment.setArguments(args);
     return fragment;
-  }
-
-  public static void addFlutter(Context activity, final WindowManager wm) {
-    flutterView = Flutter.createView(
-            (FragmentActivity) activity,
-            ((FragmentActivity) activity).getLifecycle(),
-            ""
-    );
-
-    final FrameLayout root = new FrameLayout(activity);
-    //一个像素足矣
-    FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-//        root.setVisibility(View.INVISIBLE);
-    root.addView(flutterView, params);
-    WindowManager.LayoutParams wlp = new WindowManager.LayoutParams();
-    wlp.width = 1;
-    wlp.height =1;
-    wlp.flags |= WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-    wlp.flags |= WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE;
-    wm.addView(root, wlp);
-
-    final FlutterView.FirstFrameListener[] listenerRef = new FlutterView.FirstFrameListener[1];
-    listenerRef[0] = new FlutterView.FirstFrameListener() {
-      @Override
-      public void onFirstFrame() {
-        //首帧渲染完后取消窗口
-        root.removeAllViews();
-        wm.removeView(root);
-        flutterView.removeFirstFrameListener(listenerRef[0]);
-      }
-    };
-    flutterView.addFirstFrameListener(listenerRef[0]);
   }
 
   /**
@@ -126,6 +88,7 @@ public final class Flutter {
     if (initialRoute != null) {
       flutterView.setInitialRoute(initialRoute);
     }
+    FlutterPlugin.registerWith(flutterView.getPluginRegistry().registrarFor("plugin"), activity);
     lifecycle.addObserver(new LifecycleObserver() {
       @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
       public void onCreate() {
