@@ -1,5 +1,6 @@
 package com.further.run.algorithm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.further.run.R;
+import com.further.run.algorithm.recursion.HanotaActivity;
 import com.further.run.algorithm.sort.BuckSort;
 import com.further.run.algorithm.sort.QuickSortUtil;
+import com.further.run.labzone.dir.DirActivity;
 
 import java.util.Random;
 
@@ -58,6 +61,8 @@ public class AlgorithmActivity extends AppCompatActivity implements View.OnClick
         currentArraysTV.setText(displayArray(arrays));
 
         FindCommonNumber.find();
+
+
     }
 
     private void sortEvent(int[] arrays) {
@@ -93,6 +98,10 @@ public class AlgorithmActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.aft2_arrays:
                 sort2Event(arrays);
+                break;
+            case R.id.hanota:
+//                startActivity(new Intent(AlgorithmActivity.this, HanotaActivity.class));
+                startActivity(new Intent(AlgorithmActivity.this, DirActivity.class));
                 break;
         }
     }

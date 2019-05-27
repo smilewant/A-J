@@ -12,7 +12,7 @@ public class HeapSort {
         this.arr = arr;
     }
 
-    public void sort(){
+    public void sort() {
         int len = arr.length - 1;
         int beginIndex = (len - 1) >> 1;
         for (int i = beginIndex; i >= 0; i--) {
@@ -32,7 +32,7 @@ public class HeapSort {
     }
 
     private void maxHeapify(int index, int len) {
-       System.out.print("arr : " + displayArray(arr) + "\n");
+        System.out.print("arr : " + displayArray(arr) + "\n");
         int li = (index << 1) + 1;
         int ri = li + 1;
         int cMax = li;
@@ -44,13 +44,13 @@ public class HeapSort {
         }
         if (arr[cMax] > arr[index]) {
             swap(cMax, index);
-            maxHeapify(cMax,  len);
+            maxHeapify(cMax, len);
         }
     }
 
     private String displayArray(int[] arrays) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int a : arrays){
+        for (int a : arrays) {
             stringBuilder.append(a).append(",");
         }
         return stringBuilder.toString();

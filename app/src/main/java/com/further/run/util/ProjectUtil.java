@@ -1,6 +1,8 @@
 package com.further.run.util;
 
+import com.further.run.Setting.SettingManagerActivity;
 import com.further.run.algorithm.AlgorithmActivity;
+import com.further.run.algorithm.recursion.HanotaActivity;
 import com.further.run.anno.AnnoActivity;
 import com.further.run.concurrent.ConcurrentTestActivity;
 import com.further.run.customview.SuspendViewService;
@@ -49,6 +51,8 @@ public class ProjectUtil {
         classList.add(SurfaceActivity.class);
         classList.add(VideoViewActivity.class);
         classList.add(TextureViewActivity.class);
+        classList.add(SettingManagerActivity.class);
+        classList.add(HanotaActivity.class);
         return classList;
     }
 }

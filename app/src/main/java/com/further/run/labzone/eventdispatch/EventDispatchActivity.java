@@ -5,8 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.further.run.R;
+import com.further.run.customview.SideBar;
 import com.further.run.log.LogUtil;
 
 /**
@@ -19,6 +21,7 @@ import com.further.run.log.LogUtil;
 public class EventDispatchActivity extends AppCompatActivity {
     private CustomDispatchViewGroup outLayout;
     private CustomDispatchView innerView;
+    private SideBar sideBar;
 
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,19 +33,22 @@ public class EventDispatchActivity extends AppCompatActivity {
 
     private void initView() {
         outLayout = findViewById(R.id.out_layout);
+        outLayout.requestDisallowInterceptTouchEvent(false);
         innerView = findViewById(R.id.inner_view);
 //        innerView = new CustomDispatchView(this);
 //        outLayout.addView(innerView);
-        innerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                innerView = new CustomDispatchView(EventDispatchActivity.this);
-//                outLayout.addView(innerView);
-//                innerView.requestLayout();
-                LogUtil.d("CustomDispatchView-------------------------");
-                innerView.invalidate();
-            }
-        });
+//        innerView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                innerView = new CustomDispatchView(EventDispatchActivity.this);
+////                outLayout.addView(innerView);
+////                innerView.requestLayout();
+//                LogUtil.e("INNER onClick------------------------");
+//                innerView.invalidate();
+//            }
+//        });
+
+        sideBar = findViewById(R.id.holiday_city_list_sidebar);
 
     }
 
@@ -54,13 +60,13 @@ public class EventDispatchActivity extends AppCompatActivity {
 //            public boolean onTouch(View v, MotionEvent event) {
 //                switch (event.getAction()) {
 //                    case MotionEvent.ACTION_UP:
-//                        LogUtil.d("OUT ACTION_UP");
+//                        LogUtil.e("OUT ACTION_UP");
 //                        break;
 //                    case MotionEvent.ACTION_MOVE:
-//                        LogUtil.d("OUT ACTION_MOVE");
+//                        LogUtil.e("OUT ACTION_MOVE");
 //                        break;
 //                    case MotionEvent.ACTION_DOWN:
-//                        LogUtil.d("OUT ACTION_DOWN");
+//                        LogUtil.e("OUT ACTION_DOWN");
 //                        break;
 //                }
 //                return false;
@@ -74,33 +80,34 @@ public class EventDispatchActivity extends AppCompatActivity {
         innerView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                Toast.makeText(EventDispatchActivity.this, "event.getAction() : " + event.getAction(), Toast.LENGTH_SHORT).show();
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_UP:
-                        LogUtil.d("INNER ACTION_UP");
+                        LogUtil.e("INNER ACTION_UP");
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        LogUtil.d("INNER ACTION_MOVE");
+                        LogUtil.e("INNER ACTION_MOVE");
                         break;
                     case MotionEvent.ACTION_DOWN:
-                        innerView.getParent().requestDisallowInterceptTouchEvent(true);
-                        LogUtil.d("INNER ACTION_DOWN");
+//                        innerView.getParent().requestDisallowInterceptTouchEvent(true);
+                        LogUtil.e("INNER ACTION_DOWN");
                         break;
                 }
 //                innerView.invalidate();
-                return true;
+                return false;
             }
         });
         innerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LogUtil.d("INNER OnClickListener");
+                LogUtil.e("INNER OnClickListener");
             }
         });
 
         innerView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                LogUtil.d("INNER onLongClick");
+                LogUtil.e("INNER onLongClick");
                 return true;
             }
         });

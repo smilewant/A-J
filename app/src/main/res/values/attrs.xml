@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HomeCircleRoundImageView">
+        <attr name="hcriRadiusTop" format="dimension" />
+        <attr name="hcriRadiusBottom" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="RatioImageView">
+        <attr name="originWidth" format="integer" />
+        <attr name="originHeight" format="integer" />
+    </declare-styleable>
+</resources>

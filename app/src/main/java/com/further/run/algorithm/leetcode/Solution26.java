@@ -9,6 +9,7 @@ import java.util.List;
  * Created by Zion
  * 2019/3/13.
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ * Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
  */
 public class Solution26 {
     public int removeDuplicates(int[] nums) {
@@ -34,7 +35,7 @@ public class Solution26 {
         int index = 2;
         for (int i = 2; i < nums.length; i++){
             if (nums[i] != nums[index - 2])
-                nums[index++] = nums[i];        index = nums[index++] = nums[i];
+                nums[index++] = nums[i];
 
         }
         GenerateData.displayArray(nums);

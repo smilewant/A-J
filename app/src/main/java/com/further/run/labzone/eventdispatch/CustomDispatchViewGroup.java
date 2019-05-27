@@ -30,13 +30,13 @@ public class CustomDispatchViewGroup extends RelativeLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_UP:
-                LogUtil.d("CustomDispatchViewGroup dispatchTouchEvent ACTION_UP " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup dispatchTouchEvent ACTION_UP " + ev.getAction());
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtil.d("CustomDispatchViewGroup dispatchTouchEvent ACTION_MOVE " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup dispatchTouchEvent ACTION_MOVE " + ev.getAction());
                 break;
             case MotionEvent.ACTION_DOWN:
-                LogUtil.d("CustomDispatchViewGroup dispatchTouchEvent ACTION_DOWN " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup dispatchTouchEvent ACTION_DOWN " + ev.getAction());
                 break;
         }
         return super.dispatchTouchEvent(ev);
@@ -46,14 +46,14 @@ public class CustomDispatchViewGroup extends RelativeLayout {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_UP:
-                LogUtil.d("CustomDispatchViewGroup onInterceptTouchEvent ACTION_UP " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup onInterceptTouchEvent ACTION_UP " + ev.getAction());
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtil.d("CustomDispatchViewGroup onInterceptTouchEvent ACTION_MOVE " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup onInterceptTouchEvent ACTION_MOVE " + ev.getAction());
 //                return true;
                 break;
             case MotionEvent.ACTION_DOWN:
-                LogUtil.d("CustomDispatchViewGroup onInterceptTouchEvent ACTION_DOWN " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup onInterceptTouchEvent ACTION_DOWN " + ev.getAction());
                 break;
         }
         return super.onInterceptTouchEvent(ev);
@@ -64,30 +64,30 @@ public class CustomDispatchViewGroup extends RelativeLayout {
     public boolean onTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_UP:
-                LogUtil.d("CustomDispatchViewGroup onTouchEvent ACTION_UP " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup onTouchEvent ACTION_UP " + ev.getAction());
                 break;
             case MotionEvent.ACTION_MOVE:
-                LogUtil.d("CustomDispatchViewGroup onTouchEvent ACTION_MOVE " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup onTouchEvent ACTION_MOVE " + ev.getAction());
                 break;
             case MotionEvent.ACTION_DOWN:
-                LogUtil.d("CustomDispatchViewGroup onTouchEvent ACTION_DOWN " + ev.getAction());
+                LogUtil.e("CustomDispatchViewGroup onTouchEvent ACTION_DOWN " + ev.getAction());
                 break;
         }
-        return super.onTouchEvent(ev);
+        return true;
     }
 
     public void onMeasure(int widthSpec, int heightSpec){
-        LogUtil.d("CustomDispatchViewGroup onMeasure");
+        LogUtil.e("CustomDispatchViewGroup onMeasure");
         super.onMeasure(widthSpec, heightSpec);
     }
 
     public void onDraw(Canvas c){
-        LogUtil.d("CustomDispatchViewGroup onDraw");
+        LogUtil.e("CustomDispatchViewGroup onDraw");
         super.onDraw(c);
     }
 
     public void onLayout(boolean changed, int l, int t, int r, int b){
-        LogUtil.d("CustomDispatchViewGroup onLayout");
+        LogUtil.e("CustomDispatchViewGroup onLayout");
         super.onLayout(changed, l, t, r, b);
     }
 }

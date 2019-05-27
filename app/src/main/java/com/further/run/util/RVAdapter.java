@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,7 +14,7 @@ import java.util.List;
  * 2018/5/15.
  */
 public abstract class RVAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private List<T> datas;
+    private List<T> datas = new ArrayList<>();
     private RVHolder rvHolder;
     private Context mContext;
     private int resourceID;
@@ -59,7 +60,7 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
 
-    public abstract int getLayoutResId(T item);
+    public int getLayoutResId(T item){return 0;};
 
     public abstract void convert(RVHolder holder, T data, int positon);
 }

@@ -72,8 +72,8 @@ public class CustomDispatchView extends View {
                 break;
         }
         invalidate();
-        super.onTouchEvent(event);
-        return true;
+//        ;
+        return super.onTouchEvent(event);
     }
 
     @Override

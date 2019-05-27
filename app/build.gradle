@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
@@ -37,5 +38,9 @@ dependencies {
     annotationProcessor project(':annoprocessor')
     compileOnly project(':annoprocessor')
     implementation project(':flutter')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+}
+repositories {
+    mavenCentral()
 }

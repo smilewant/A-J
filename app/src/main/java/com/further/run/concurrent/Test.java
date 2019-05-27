@@ -1,6 +1,8 @@
 package com.further.run.concurrent;
 
 import com.further.run.algorithm.leetcode.Solution26;
+import com.further.run.algorithm.recursion.CoinSum;
+import com.further.run.algorithm.recursion.Hanota;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -16,6 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * Created by Hukuan
@@ -24,6 +27,14 @@ import java.util.Set;
 class Test {
     static Thread t1;
     static Thread t2;
+
+    enum Event{
+        A("detail");
+        String detail;
+        Event(String detail) {
+            this.detail = detail;
+        }
+    }
 
     public static String code(String str) throws NoSuchAlgorithmException {
         MessageDigest alga;
@@ -44,10 +55,20 @@ class Test {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-        int[] arrd = {0, 2, 1, 1, 4, 1, 1, 2, 3, 4};
-//        new HeapSort(arrd).sort();
-        Solution26 solution = new Solution26();
+        CoinSum.sum();
+        Event.A.name();
+//        int[] arrd = {0, 2, 1, 1, 4, 1, 1, 2, 3, 4};
+//        Stack begin = new Stack();
+//        begin.push("a");
+//        begin.push("b");
+//        begin.push("c");
+//        begin.push("d");
+//        begin.push("e");
+//        Hanota.hanota(begin.size(), begin);
+////        new HeapSort(arrd).sort();
+//        Solution26 solution = new Solution26();
         System.out.print(URLEncoder.encode("Redmi Note 7+".replaceAll("\\s*", ""), "UTF-8"));
+        System.out.print("Event.A.name() : " + Event.A.detail + "\n");
 
         System.out.print("so " + code(URLEncoder.encode("Redmi Note 7+".replaceAll("\\s*", ""), "UTF-8")) + "\n");
 //        int[] a = GenerateData.generateEventR(20);
