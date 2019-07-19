@@ -3,6 +3,7 @@ package com.further.run.labzone.recyclerview;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -67,7 +68,22 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
             }
         }, 200);
 
-        mMainRV.setLayoutManager(new LinearLayoutManager(this));
+//        mMainRV.setLayoutManager(new LinearLayoutManager(this));
+        mMainRV.addItemDecoration(SectionDecoration.Builder.init(new GroupListener() {
+            @Override
+            public String getGroupName(int pos) {
+                return ProjectUtil.getClasses().get(pos).getName();
+            }
+
+            @Override
+            public View getGroupView(int pos) {
+                if (pos > ProjectUtil.getClasses().size()) return null;
+                TextView textView = new TextView(DoubleRecyclerViewActivity.this);
+                textView.setText(pos + "");
+                textView.setBackgroundColor(ContextCompat.getColor(DoubleRecyclerViewActivity.this, R.color.colorPrimary));
+                return textView;
+            }
+        }).setGroupHeight(MobileUtil.dip2px(40)).build());
         RVAdapter mRvAdapter = new RVAdapter<Class<?>>(this, ProjectUtil.getClasses(), R.layout.child_item_double_activity) {
             @Override
             public int getLayoutResId(Class<?> data) {
@@ -84,7 +100,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         holder.getView(R.id.child_recycler).setVisibility(View.VISIBLE);
                         List<DateVo> dateVos = new ArrayList<>();
-                        for (int i = 0; i < 8; i++){
+                        for (int i = 0; i < 8; i++) {
                             DateVo dateVo = new DateVo();
                             Random random = new Random();
                             dateVo.date = random.nextInt(50) + "";
@@ -108,7 +124,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
 
     }
 
-    private long showFiles(File file, String blank){
+    private long showFiles(File file, String blank) {
         if (file.isDirectory()) {
             File[] files = file.listFiles();
             long size = 0;
@@ -119,7 +135,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
                 }
             }
             if (size / 1024 > 1024 * 10) {
-                LogUtil.d( "***" + file.getAbsolutePath() + " : " + size / 1024 /1024 );
+                LogUtil.d("***" + file.getAbsolutePath() + " : " + size / 1024 / 1024);
             }
             return size;
         } else {
@@ -163,7 +179,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
                                                 return -1;
                                             else if (date1 > date2)
                                                 return 1;
-                                            else if (date1== date2)
+                                            else if (date1 == date2)
                                                 return 0;
                                         }
                                         return result;
@@ -196,7 +212,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
                                 return -1;
                             else if (date1 > date2)
                                 return 1;
-                            else if (date1== date2)
+                            else if (date1 == date2)
                                 return 0;
                         }
                         return result;
@@ -210,6 +226,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
                 });
         return selectedDates;
     }
+
     private void childRecyler(RecyclerView childRecycler) {
         childRecycler.setLayoutManager(new LinearLayoutManager(this));
         List<Class<?>> classList = new ArrayList<>();

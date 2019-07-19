@@ -12,6 +12,7 @@ import com.further.run.algorithm.recursion.HanotaActivity;
 import com.further.run.algorithm.sort.BuckSort;
 import com.further.run.algorithm.sort.QuickSortUtil;
 import com.further.run.labzone.dir.DirActivity;
+import com.further.run.main.BaseActivity;
 
 import java.util.Random;
 
@@ -19,7 +20,7 @@ import java.util.Random;
  * Created by Hukuan
  * 2018/4/26.
  */
-public class AlgorithmActivity extends AppCompatActivity implements View.OnClickListener {
+public class AlgorithmActivity extends BaseActivity implements View.OnClickListener {
     private int[] arrays = new int[SIZE];
     private TextView generateTV;
     private TextView currentArraysTV;

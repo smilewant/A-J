@@ -16,5 +16,8 @@
         app:hcriRadiusTop="@dimen/space_10"
         app:originHeight="82"
         app:originWidth="82" />
+    <com.further.run.labzone.ball.MySurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </android.support.constraint.ConstraintLayout>

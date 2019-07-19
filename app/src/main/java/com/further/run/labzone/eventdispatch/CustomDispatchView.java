@@ -16,7 +16,7 @@ import com.further.run.log.LogUtil;
  * 2018/5/16.
  */
 public class CustomDispatchView extends View {
-    private float x, y;
+    public float x, y;
     private Paint paint = new Paint();
 
     public CustomDispatchView(Context context) {
@@ -67,12 +67,11 @@ public class CustomDispatchView extends View {
             case MotionEvent.ACTION_DOWN:
                 rX = event.getX();
                 ry = event.getY();
-                this.getParent().requestDisallowInterceptTouchEvent(true);
+//                this.getParent().requestDisallowInterceptTouchEvent(true);
                 LogUtil.e("CustomDispatchView onTouchEvent ACTION_DOWN " + event.getX());
                 break;
         }
-        invalidate();
-//        ;
+//        invalidate();
         return super.onTouchEvent(event);
     }
 

@@ -42,12 +42,13 @@ public class GlideShowActivity extends AppCompatActivity {
         clickTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "http://pic.lvmama.com/uploads/pc/place2/2018-06-25/26c913d0-13c6-4cdf-a403-66c941e1c842_720_.jpg";
+//                String url = "http://pic.lvmama.com/uploads/pc/place2/2018-06-25/26c913d0-13c6-4cdf-a403-66c941e1c842_720_.jpg";
+                String url = "https://pics.lvjs.com.cn/pics/lego/back/201906/1559699658963.jpg";
                 Glide.with(GlideShowActivity.this)
                         .load(url)
                         .placeholder(R.mipmap.ic_launcher)
                         .error(R.mipmap.ic_launcher_round)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .diskCacheStrategy(DiskCacheStrategy.RESULT)
                         .into(imgIV);
 //                request();
 //                showSharePopWindow();

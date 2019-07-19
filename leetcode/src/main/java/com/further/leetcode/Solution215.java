@@ -1,4 +1,4 @@
-package com.further.run.algorithm.leetcode;
+package com.further.leetcode;
 
 /**
  * Created by Zion

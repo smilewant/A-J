@@ -1,5 +1,6 @@
 package com.further.run.util;
 
+import com.further.run.Setting.FragmentManagerActivity;
 import com.further.run.Setting.SettingManagerActivity;
 import com.further.run.algorithm.AlgorithmActivity;
 import com.further.run.algorithm.recursion.HanotaActivity;
@@ -12,6 +13,7 @@ import com.further.run.labzone.eventdispatch.EventDispatchActivity;
 import com.further.run.labzone.glide.GlideShowActivity;
 import com.further.run.labzone.handlerthread.HandlerThreadTestActivity;
 import com.further.run.labzone.hugeimagetest.HugeImageActivity;
+import com.further.run.labzone.hugeimagetest.ImageThumbActivity;
 import com.further.run.labzone.launchmode.ScrollingActivity;
 import com.further.run.labzone.launchmode.SingleInstanceTestActivity;
 import com.further.run.labzone.optimize.OptimizeActivity;
@@ -53,6 +55,8 @@ public class ProjectUtil {
         classList.add(TextureViewActivity.class);
         classList.add(SettingManagerActivity.class);
         classList.add(HanotaActivity.class);
+        classList.add(ImageThumbActivity.class);
+        classList.add(FragmentManagerActivity.class);
         return classList;
     }
 }

@@ -51,6 +51,8 @@
         <activity android:name=".labzone.optimize.OptimizeActivity" />
         <activity android:name=".labzone.handlerthread.HandlerThreadTestActivity" />
         <activity android:name=".labzone.recyclerview.DoubleRecyclerViewActivity" />
+        <activity android:name=".labzone.hugeimagetest.ImageThumbActivity" />
+        <activity android:name=".Setting.FragmentManagerActivity" />
 
         <service android:name=".labzone.aidltest.AidlService"/>
         <service android:name=".customview.SuspendViewService" />

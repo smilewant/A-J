@@ -1,8 +1,7 @@
 package com.further.run.concurrent;
 
-import com.further.run.algorithm.leetcode.Solution26;
+import com.further.leetcode.Solution6;
 import com.further.run.algorithm.recursion.CoinSum;
-import com.further.run.algorithm.recursion.Hanota;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -18,7 +17,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Stack;
 
 /**
  * Created by Hukuan
@@ -55,6 +53,8 @@ class Test {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        int[] nums = {2,3,1,2,4,3};
+        Solution6.convert("PAYPALISHIRING",2);
         CoinSum.sum();
         Event.A.name();
 //        int[] arrd = {0, 2, 1, 1, 4, 1, 1, 2, 3, 4};

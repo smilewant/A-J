@@ -39,6 +39,7 @@ dependencies {
     compileOnly project(':annoprocessor')
     implementation project(':flutter')
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation project(':leetcode')
 
 }
 repositories {

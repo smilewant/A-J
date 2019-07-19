@@ -1,6 +1,5 @@
-package com.further.run.algorithm.leetcode;
+package com.further.leetcode;
 
-import com.further.run.algorithm.GenerateData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +37,7 @@ public class Solution26 {
                 nums[index++] = nums[i];
 
         }
-        GenerateData.displayArray(nums);
+//        GenerateData.displayArray(nums);
         return index;
     }
 }

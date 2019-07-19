@@ -10,6 +10,7 @@ import java.util.List;
  * 2019/1/7.
  */
 public class Constant {
+    public static final float UNIT_SIZE = 1;
     //网络视频地址：
     public static String[] videoArray=new String[]{
             "http://mediadownloads.mlb.com/mlbam/2009/05/09/mlbtv_tbabos_4494731_1m.mp4",
@@ -29,4 +30,6 @@ public class Constant {
         list.add(new VideoInfo(videoArray[2],name[2],img[2]));
         return list;
     }
+
+    public static float ratio;
 }

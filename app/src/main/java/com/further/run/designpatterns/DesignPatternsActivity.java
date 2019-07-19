@@ -12,6 +12,7 @@ import com.further.run.designpatterns.proxymode.DynamicProxySubject;
 import com.further.run.designpatterns.proxymode.ProxySubject;
 import com.further.run.designpatterns.proxymode.RealSubject;
 import com.further.run.designpatterns.proxymode.Subject;
+import com.further.run.main.BaseActivity;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -20,7 +21,7 @@ import java.lang.reflect.Proxy;
  * Created by Hukuan
  * 2018/5/7.
  */
-public class DesignPatternsActivity extends AppCompatActivity {
+public class DesignPatternsActivity extends BaseActivity {
     private TextView staticAgentTV, dynaticAgentTV;
 
     public void onCreate(@Nullable final Bundle savedInstanceState) {
