@@ -20,7 +20,7 @@ public class RVHolder<T> extends RecyclerView.ViewHolder {
     }
 
     public void setText(int id, String text){
-        TextView view  = itemView.findViewById(id);
+        TextView view  = getView(id);
         view.setText(text);
     }
 

@@ -23,7 +23,6 @@ public class Solution26 {
             nums[j++] = m;
         }
 //        GenerateData.displayArray(nums);
-
         return list.size();
     }
 

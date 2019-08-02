@@ -1,6 +1,7 @@
 package com.further.run.concurrent;
 
 import com.further.leetcode.Solution6;
+import com.further.leetcode.Solution7;
 import com.further.run.algorithm.recursion.CoinSum;
 
 import java.io.File;
@@ -54,7 +55,8 @@ class Test {
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         int[] nums = {2,3,1,2,4,3};
-        Solution6.convert("PAYPALISHIRING",2);
+//        Solution6.convert("PAYPALISHIRING",2);
+        Solution7.reverse(1534236469);
         CoinSum.sum();
         Event.A.name();
 //        int[] arrd = {0, 2, 1, 1, 4, 1, 1, 2, 3, 4};

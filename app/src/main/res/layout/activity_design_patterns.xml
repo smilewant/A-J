@@ -1,21 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_pane_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/left_layout"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@color/color_ff7f6a"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/dynamic_agent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/dynamic_agent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/dynamic_agent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/dynamic_agent" />
+
+        <TextView
+            android:id="@+id/static_agent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/static_agent" />
+
+        <TextView
+            android:id="@+id/dynamic_agent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/dynamic_agent" />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/static_agent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/open_sliding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:padding="10dp"
         android:text="@string/static_agent" />
-
-    <TextView
-        android:id="@+id/dynamic_agent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/dynamic_agent" />
-
-</LinearLayout>
+</android.support.v4.widget.SlidingPaneLayout>

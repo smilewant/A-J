@@ -20,9 +20,9 @@ import java.util.zip.Inflater;
  * 2019/7/17.
  */
 public class BaseActivity extends AppCompatActivity {
-    CustomDispatchView view;
-    float rX = 0, ry = 0;
-    float x,y;
+//    CustomDispatchView view;
+//    float rX = 0, ry = 0;
+//    float x,y;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,37 +30,37 @@ public class BaseActivity extends AppCompatActivity {
 
     public void onResume(){
         super.onResume();
-        if (view == null) {
-            view = new CustomDispatchView(this);
-            view.setClickable(true);
-            view.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    switch (event.getAction()) {
-                        case MotionEvent.ACTION_UP:
-//                performClick();
-                            LogUtil.e("CustomDispatchView onTouchEvent ACTION_UP " + event.getAction());
-                            break;
-                        case MotionEvent.ACTION_MOVE:
-                            x = event.getX() - rX;
-                            y = event.getY() - ry;
-                            view.x = x;
-                            view.y = y;
-                            LogUtil.e("CustomDispatchView onTouchEvent ACTION_MOVE " + event.getX() + " " + event.getRawX());
-                            break;
-                        case MotionEvent.ACTION_DOWN:
-                            rX = event.getX();
-                            ry = event.getY();
-//                this.getParent().requestDisallowInterceptTouchEvent(true);
-                            LogUtil.e("CustomDispatchView onTouchEvent ACTION_DOWN " + event.getX());
-                            break;
-                    }
-                    view.invalidate();
-                    return true;
-                }
-            });
+//        if (view == null) {
+//            view = new CustomDispatchView(this);
+//            view.setClickable(true);
+//            view.setOnTouchListener(new View.OnTouchListener() {
+//                @Override
+//                public boolean onTouch(View v, MotionEvent event) {
+//                    switch (event.getAction()) {
+//                        case MotionEvent.ACTION_UP:
+////                performClick();
+//                            LogUtil.e("CustomDispatchView onTouchEvent ACTION_UP " + event.getAction());
+//                            break;
+//                        case MotionEvent.ACTION_MOVE:
+//                            x = event.getX() - rX;
+//                            y = event.getY() - ry;
+//                            view.x = x;
+//                            view.y = y;
+//                            LogUtil.e("CustomDispatchView onTouchEvent ACTION_MOVE " + event.getX() + " " + event.getRawX());
+//                            break;
+//                        case MotionEvent.ACTION_DOWN:
+//                            rX = event.getX();
+//                            ry = event.getY();
+////                this.getParent().requestDisallowInterceptTouchEvent(true);
+//                            LogUtil.e("CustomDispatchView onTouchEvent ACTION_DOWN " + event.getX());
+//                            break;
+//                    }
+//                    view.invalidate();
+//                    return true;
+//                }
+//            });
 //            view.setBackgroundColor(ContextCompat.getColor(this,R.color.color_dddddd));
-            getDelegate().addContentView(view, new ViewGroup.LayoutParams(200, 200));
-        }
+//            getDelegate().addContentView(view, new ViewGroup.LayoutParams(200, 200));
+//        }
     }
 }
