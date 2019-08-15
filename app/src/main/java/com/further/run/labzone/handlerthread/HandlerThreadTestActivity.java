@@ -14,8 +14,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
-import com.further.run.util.MobileUtil;
+import com.further.foundation.util.LogUtil;
+import com.further.foundation.util.MobileUtil;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;

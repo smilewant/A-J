@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".algorithm.AlgorithmActivity" />
+
         <activity android:name=".designpatterns.DesignPatternsActivity" />
         <activity android:name=".concurrent.ConcurrentTestActivity" />
         <activity android:name=".labzone.eventdispatch.EventDispatchActivity" />
@@ -56,9 +56,6 @@
 
         <service android:name=".labzone.aidltest.AidlService"/>
         <service android:name=".customview.SuspendViewService" />
-
-        <activity android:name=".algorithm.recursion.HanotaActivity"
-            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".labzone.launchmode.ScrollingActivity"

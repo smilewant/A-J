@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.further.run.R;
 import com.further.run.customview.SideBar;
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 /**
  * Created by Hukuan

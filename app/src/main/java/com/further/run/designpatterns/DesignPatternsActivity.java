@@ -8,19 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.further.run.R;
-import com.further.run.designpatterns.buildermode.Student;
-import com.further.run.designpatterns.proxymode.DynamicProxySubject;
-import com.further.run.designpatterns.proxymode.ProxySubject;
-import com.further.run.designpatterns.proxymode.RealSubject;
-import com.further.run.designpatterns.proxymode.Subject;
-import com.further.run.log.LogUtil;
-import com.further.run.main.BaseActivity;
-
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
+import com.further.foundation.util.LogUtil;
 
 /**
  * Created by Hukuan

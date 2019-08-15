@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 /**
  * Created by Hukuan

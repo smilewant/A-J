@@ -5,7 +5,6 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.wifi.WifiInfo;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -19,7 +18,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

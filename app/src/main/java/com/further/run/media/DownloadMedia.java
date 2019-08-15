@@ -3,7 +3,7 @@ package com.further.run.media;
 import android.os.Environment;
 import android.text.TextUtils;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;

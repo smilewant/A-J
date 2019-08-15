@@ -7,7 +7,7 @@ import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 /**
  * Created by Hukuan

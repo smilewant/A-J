@@ -1,6 +1,6 @@
 package com.further.run.concurrent;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

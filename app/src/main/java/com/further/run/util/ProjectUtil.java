@@ -2,8 +2,8 @@ package com.further.run.util;
 
 import com.further.run.Setting.FragmentManagerActivity;
 import com.further.run.Setting.SettingManagerActivity;
-import com.further.run.algorithm.AlgorithmActivity;
-import com.further.run.algorithm.recursion.HanotaActivity;
+import com.further.algorithm.AlgorithmActivity;
+import com.further.algorithm.recursion.HanotaActivity;
 import com.further.run.anno.AnnoActivity;
 import com.further.run.concurrent.ConcurrentTestActivity;
 import com.further.run.customview.SuspendViewService;

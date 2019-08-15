@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
-import com.further.run.util.MobileUtil;
+import com.further.foundation.util.LogUtil;
+import com.further.foundation.util.MobileUtil;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

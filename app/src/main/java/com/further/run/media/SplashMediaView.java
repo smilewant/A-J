@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.TextureView;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.io.IOException;
 

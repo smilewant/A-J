@@ -7,12 +7,14 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
-import com.further.run.util.MobileUtil;
+import com.further.foundation.util.LogUtil;
+import com.further.foundation.util.MobileUtil;
 import com.further.run.util.ProjectUtil;
 import com.further.run.util.RVAdapter;
 import com.further.run.util.RVHolder;
@@ -68,7 +70,7 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
             }
         }, 200);
 
-//        mMainRV.setLayoutManager(new LinearLayoutManager(this));
+        mMainRV.setLayoutManager(new LinearLayoutManager(this));
         mMainRV.addItemDecoration(SectionDecoration.Builder.init(new GroupListener() {
             @Override
             public String getGroupName(int pos) {
@@ -78,10 +80,34 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
             @Override
             public View getGroupView(int pos) {
                 if (pos > ProjectUtil.getClasses().size()) return null;
-                TextView textView = new TextView(DoubleRecyclerViewActivity.this);
-                textView.setText(pos + "");
-                textView.setBackgroundColor(ContextCompat.getColor(DoubleRecyclerViewActivity.this, R.color.colorPrimary));
-                return textView;
+//                TextView textView = new TextView(DoubleRecyclerViewActivity.this);
+//                textView.setText(pos + "");
+//                textView.setBackgroundColor(ContextCompat.getColor(DoubleRecyclerViewActivity.this, R.color.colorPrimary));
+                View view = LayoutInflater.from(DoubleRecyclerViewActivity.this).inflate(R.layout.layout, null);
+                RecyclerView recyclerView = new RecyclerView(DoubleRecyclerViewActivity.this);
+                recyclerView.setBackgroundColor(ContextCompat.getColor(DoubleRecyclerViewActivity.this, R.color.color_ffffff));
+                recyclerView.setLayoutManager(new LinearLayoutManager(DoubleRecyclerViewActivity.this, LinearLayoutManager.HORIZONTAL, false));
+                List<String> abc = new ArrayList<>();
+                abc.add("跟团游");
+                abc.add("跟团游");
+                abc.add("跟团游");
+                abc.add("跟团游");
+                abc.add("跟团游");
+                abc.add("跟团游");
+                abc.add("跟团游");
+                abc.add("跟团游");
+                RVAdapter adapter = new RVAdapter<String>(DoubleRecyclerViewActivity.this, abc, R.layout.c_indicator_item) {
+                    @Override
+                    public void convert(RVHolder holder, String data, int positon) {
+                        holder.getItemView().setLayoutParams(new ViewGroup.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
+                        holder.setText(R.id.item_name, "跟团游");
+                        ((TextView) holder.getView(R.id.item_name)).setTextSize(0, 14);
+//                holder.setTextColor(R.id.item_name, nowPosition == position ? checkColor : unCheckColor);
+                        holder.getView(R.id.item_indicator_bg).setBackgroundColor(ContextCompat.getColor(DoubleRecyclerViewActivity.this, R.color.color_D30775));
+                    }
+                };
+                recyclerView.setAdapter(adapter);
+                return recyclerView;
             }
         }).setGroupHeight(MobileUtil.dip2px(40)).build());
         RVAdapter mRvAdapter = new RVAdapter<Class<?>>(this, ProjectUtil.getClasses(), R.layout.child_item_double_activity) {

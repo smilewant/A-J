@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.further.run.R;
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 /**
  * Created by Hukuan

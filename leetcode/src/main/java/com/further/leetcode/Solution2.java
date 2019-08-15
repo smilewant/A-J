@@ -84,12 +84,3 @@ public class Solution2 {
         return builder.toString();
     }
 }
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}

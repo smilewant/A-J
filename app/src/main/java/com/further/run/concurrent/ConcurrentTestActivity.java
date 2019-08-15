@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.further.run.R;
 import com.further.run.customview.LetterIndicator;
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import run.further.com.annoprocessor.Name;
 

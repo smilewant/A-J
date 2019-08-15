@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.further.algorithm" >
+    <application>
+        <activity android:name="com.further.algorithm.AlgorithmActivity" />
+        <activity android:name="com.further.algorithm.recursion.HanotaActivity" />
+
+    </application>
+</manifest>

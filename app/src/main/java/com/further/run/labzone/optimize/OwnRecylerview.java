@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 /**
  * Created by Hukuan

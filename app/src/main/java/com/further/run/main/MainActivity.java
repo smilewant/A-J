@@ -1,7 +1,6 @@
 package com.further.run.main;
 
 import android.Manifest;
-import android.app.admin.DevicePolicyManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -9,27 +8,23 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.further.foundation.BaseActivity;
 import com.further.run.R;
-import com.further.run.customview.SuspendViewService;
-import com.further.run.log.LogUtil;
-import com.further.run.util.MobileUtil;
+import com.further.foundation.util.LogUtil;
+import com.further.foundation.util.MobileUtil;
 import com.further.run.util.ProjectUtil;
 import com.further.run.util.RVAdapter;
 import com.further.run.util.RVHolder;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;

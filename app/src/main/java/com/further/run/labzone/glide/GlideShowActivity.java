@@ -15,8 +15,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.further.run.R;
 import com.further.run.customview.BaseDialog;
-import com.further.run.log.LogUtil;
-import com.further.run.util.MobileUtil;
+import com.further.foundation.util.LogUtil;
+import com.further.foundation.util.MobileUtil;
 
 import java.io.IOException;
 

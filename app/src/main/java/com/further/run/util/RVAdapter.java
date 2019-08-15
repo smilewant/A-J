@@ -60,7 +60,7 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
 
-    public int getLayoutResId(T item){return 0;};
+    public int getLayoutResId(T item){return resourceID;}
 
     public abstract void convert(RVHolder holder, T data, int positon);
 }

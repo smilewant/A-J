@@ -5,25 +5,19 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Parcelable;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import com.further.run.R;
-import com.further.run.log.LogUtil;
 
 /**
  * Created by Zion

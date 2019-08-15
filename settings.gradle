@@ -1,4 +1,4 @@
-include ':app', ':annoprocessor', ':leetcode', ':common_ui'
+include ':app', ':annoprocessor', ':leetcode', ':common_ui', ':algorithm', ':foundation'
 setBinding(new Binding([gradle: this]))                                 // new
 evaluate(new File(                                                      // new
         settingsDir.parentFile,                                               // new

@@ -1,6 +1,6 @@
 package com.further.run.labzone.tree;
 
-import com.further.run.log.LogUtil;
+import com.further.foundation.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
