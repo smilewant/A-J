@@ -6,10 +6,13 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
+import com.further.algorithm.recursion.HanotaActivity;
 import com.further.foundation.BaseActivity;
 import com.further.algorithm.sort.BuckSort;
 import com.further.algorithm.sort.QuickSortUtil;
 import com.further.algorithm.R;
+import com.further.foundation.BaseDispatcher;
+
 import java.util.Random;
 
 /**
@@ -86,20 +89,22 @@ public class AlgorithmActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.generate_id:
-//                generateEvent();
-//                break;
-//            case R.id.aft_arrays:
-//                sortEvent(arrays);
-//                break;
-//            case R.id.aft2_arrays:
-//                sort2Event(arrays);
-//                break;
-//            case R.id.hanota:
-////                startActivity(new Intent(AlgorithmActivity.this, HanotaActivity.class));
+        int i = view.getId();
+        if (i == R.id.generate_id) {
+            generateEvent();
+
+        } else if (i == R.id.aft_arrays) {
+            sortEvent(arrays);
+
+        } else if (i == R.id.aft2_arrays) {
+            sort2Event(arrays);
+
+        } else if (i == R.id.hanota) {
+//            startActivity(new Intent(AlgorithmActivity.this, HanotaActivity.class));
+            BaseDispatcher dispatcher = new BaseDispatcher();
+            dispatcher.startActivity(AlgorithmActivity.this, "Leetcode/LeetCodeActivity");
 //                startActivity(new Intent(AlgorithmActivity.this, DirActivity.class));
-//                break;
-//        }
+
+        }
     }
 }

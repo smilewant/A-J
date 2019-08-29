@@ -26,6 +26,7 @@ public class AnnoProcessor extends AbstractProcessor {
     private Elements mElementUtils;
     private Filer mFiler;
     private Messager mMessager;
+
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         mTypeUtils = processingEnv.getTypeUtils();
@@ -57,7 +58,7 @@ public class AnnoProcessor extends AbstractProcessor {
             mMessager.printMessage(Diagnostic.Kind.NOTE,
                     "Handle @Module element: " + newClassName);
             try { // write the file
-                JavaFileObject source = mFiler.createSourceFile("com.further.run.concurrent."+newClassName);
+                JavaFileObject source = mFiler.createSourceFile("com.further.run.concurrent." + newClassName);
                 Writer writer = source.openWriter();
                 writer.write(builder.toString());
                 writer.flush();

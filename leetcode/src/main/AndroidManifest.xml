@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.further.leetcode" />
+    package="com.further.leetcode" >
+    <application>
+        <activity android:name="com.further.leetcode.LeetCodeActivity" />
+
+    </application>
+</manifest>
+

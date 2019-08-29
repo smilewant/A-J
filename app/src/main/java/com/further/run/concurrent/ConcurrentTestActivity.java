@@ -15,6 +15,7 @@ import com.further.foundation.util.LogUtil;
 
 import run.further.com.annoprocessor.Name;
 
+
 /**
  * Created by Hukuan
  * 2018/5/9.
@@ -31,6 +32,7 @@ public class ConcurrentTestActivity extends AppCompatActivity implements View.On
     private SharedPreferences.Editor editor;
 
     private long startTime;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,7 +54,6 @@ public class ConcurrentTestActivity extends AppCompatActivity implements View.On
 
         preferences = getSharedPreferences("FURTHER", Context.MODE_PRIVATE);
         editor = preferences.edit();
-
 
     }
 
