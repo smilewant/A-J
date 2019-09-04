@@ -2,5 +2,5 @@ include ':app', ':annoprocessor', ':leetcode', ':common_ui', ':algorithm', ':fou
 setBinding(new Binding([gradle: this]))                                 // new
 evaluate(new File(                                                      // new
         settingsDir.parentFile,                                               // new
-        'FurtherRun/my_flutter/.android/include_flutter.groovy'                          // new
+        'android/my_flutter/.android/include_flutter.groovy'                          // new
 ))

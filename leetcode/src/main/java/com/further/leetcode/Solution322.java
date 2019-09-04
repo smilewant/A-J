@@ -1,6 +1,6 @@
 package com.further.leetcode;
 
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 /**
  * Created by Zion

@@ -1,13 +1,9 @@
 package com.further.run.Setting;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.further.run.R;
-import com.further.run.customview.HomeCircleRoundImageView;
 
 /**
  * Created by Zion

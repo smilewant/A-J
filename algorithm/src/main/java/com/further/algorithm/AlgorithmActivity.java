@@ -1,16 +1,13 @@
 package com.further.algorithm;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
-import com.further.algorithm.recursion.HanotaActivity;
 import com.further.foundation.BaseActivity;
 import com.further.algorithm.sort.BuckSort;
 import com.further.algorithm.sort.QuickSortUtil;
-import com.further.algorithm.R;
 import com.further.foundation.BaseDispatcher;
 
 import java.util.Random;

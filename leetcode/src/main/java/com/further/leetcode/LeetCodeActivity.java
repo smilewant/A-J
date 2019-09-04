@@ -1,7 +1,7 @@
 package com.further.leetcode;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.further.foundation.BaseActivity;
 
