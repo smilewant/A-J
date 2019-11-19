@@ -64,7 +64,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
-	implementation "com.facebook.react:react-native:+" // From node_modules
+//	implementation "com.facebook.react:react-native:+" // From node_modules
 
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
@@ -80,13 +80,13 @@ dependencies {
     implementation project(':algorithm')
     api project(':foundation')
 
-    if (enableHermes) {
-        def hermesPath = "../../node_modules/hermesvm/android/";
-        debugImplementation files(hermesPath + "hermes-debug.aar")
-        releaseImplementation files(hermesPath + "hermes-release.aar")
-    } else {
-        implementation jscFlavor
-    }
+//    if (enableHermes) {
+//        def hermesPath = "../../node_modules/hermesvm/android/";
+//        debugImplementation files(hermesPath + "hermes-debug.aar")
+//        releaseImplementation files(hermesPath + "hermes-release.aar")
+//    } else {
+//        implementation jscFlavor
+//    }
 
 }
 repositories {
