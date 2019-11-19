@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.further.run"
-        minSdkVersion 19
+        minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -62,7 +62,7 @@ def enableHermes = project.ext.react.get("enableHermes", false);
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
 //	implementation "com.facebook.react:react-native:+" // From node_modules
 
@@ -76,7 +76,7 @@ dependencies {
     compileOnly project(':annoprocessor')
     implementation project(':flutter')
     implementation project(':leetcode')
-
+    implementation project(':record')
     implementation project(':algorithm')
     api project(':foundation')
 
