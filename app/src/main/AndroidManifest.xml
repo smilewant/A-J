@@ -19,9 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-
-        android:appComponentFactory=""
-        tools:replace="android:appComponentFactory">
+         >
         <activity
             android:name=".main.MainActivity">
 

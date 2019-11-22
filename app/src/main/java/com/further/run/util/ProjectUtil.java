@@ -21,6 +21,7 @@ import com.further.run.labzone.recyclerview.DoubleRecyclerViewActivity;
 import com.further.run.media.SurfaceActivity;
 import com.further.run.media.TextureViewActivity;
 import com.further.run.media.VideoViewActivity;
+import com.further.x.record.RecordListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,7 @@ public class ProjectUtil {
         classList.add(HanotaActivity.class);
         classList.add(ImageThumbActivity.class);
         classList.add(FragmentManagerActivity.class);
+        classList.add(RecordListActivity.class);
         return classList;
     }
 }

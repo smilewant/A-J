@@ -1,2 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.further.x.record" />
+    package="com.further.x.record" >
+    <application>
+        <activity android:name="com.further.x.record.RecordListActivity"/>
+
+    </application>
+</manifest>

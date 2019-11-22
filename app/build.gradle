@@ -12,6 +12,9 @@ android {
 
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -23,21 +26,21 @@ android {
         targetCompatibility 1.8
     }
 
-    packagingOptions {
-        pickFirst '**/armeabi-v7a/libc++_shared.so'
-        pickFirst '**/x86/libc++_shared.so'
-        pickFirst '**/arm64-v8a/libc++_shared.so'
-        pickFirst '**/x86_64/libc++_shared.so'
-        pickFirst '**/x86/libjsc.so'
-        pickFirst '**/armeabi-v7a/libjsc.so'
-    }
+//    packagingOptions {
+//        pickFirst '**/armeabi-v7a/libc++_shared.so'
+//        pickFirst '**/x86/libc++_shared.so'
+//        pickFirst '**/arm64-v8a/libc++_shared.so'
+//        pickFirst '**/x86_64/libc++_shared.so'
+//        pickFirst '**/x86/libjsc.so'
+//        pickFirst '**/armeabi-v7a/libjsc.so'
+//    }
 
 }
 
-project.ext.react = [
-        entryFile: "index.js",
-        enableHermes: true,  // clean and rebuild if changing
-]
+//project.ext.react = [
+//        entryFile: "index.js",
+//        enableHermes: true,  // clean and rebuild if changing
+//]
 /**
  * The preferred build flavor of JavaScriptCore.
  *
@@ -49,7 +52,7 @@ project.ext.react = [
  * give correct results when using with locales other than en-US.  Note that
  * this variant is about 6MiB larger per architecture than default.
  */
-def jscFlavor = 'org.webkit:android-jsc:+'
+//def jscFlavor = 'org.webkit:android-jsc:+'
 
 /**
  * Whether to enable the Hermes VM.
@@ -58,7 +61,7 @@ def jscFlavor = 'org.webkit:android-jsc:+'
  * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
  * and the benefits of using Hermes will therefore be sharply reduced.
  */
-def enableHermes = project.ext.react.get("enableHermes", false);
+//def enableHermes = project.ext.react.get("enableHermes", false);
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
