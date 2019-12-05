@@ -1,8 +1,6 @@
-package com.further.x.record.room
+package com.further.x.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 

@@ -1,4 +1,4 @@
-package com.further.x.record.room
+package com.further.x.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

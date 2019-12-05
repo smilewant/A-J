@@ -70,18 +70,19 @@ dependencies {
 //	implementation "com.facebook.react:react-native:+" // From node_modules
 
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
     implementation 'io.reactivex:rxjava:1.0.14'
     implementation 'io.reactivex:rxandroid:1.0.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     annotationProcessor project(':annoprocessor')
     compileOnly project(':annoprocessor')
-    implementation project(':flutter')
-    implementation project(':leetcode')
-    implementation project(':record')
-    implementation project(':algorithm')
     api project(':foundation')
+    implementation project(':flutter')
+    implementation project(':record')
+
+    implementation project(':leetcode')
+    implementation project(':algorithm')
+//    api project(':foundation')
 
 //    if (enableHermes) {
 //        def hermesPath = "../../node_modules/hermesvm/android/";

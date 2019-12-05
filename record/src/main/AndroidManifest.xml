@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.further.x.record" >
+    package="com.further.x" >
     <application>
         <activity android:name="com.further.x.record.RecordListActivity"/>
-
+        <activity android:name="com.further.x.weather.WeatherActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 </manifest>

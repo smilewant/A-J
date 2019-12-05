@@ -22,6 +22,7 @@ import com.further.run.media.SurfaceActivity;
 import com.further.run.media.TextureViewActivity;
 import com.further.run.media.VideoViewActivity;
 import com.further.x.record.RecordListActivity;
+import com.further.x.weather.WeatherActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +60,7 @@ public class ProjectUtil {
         classList.add(ImageThumbActivity.class);
         classList.add(FragmentManagerActivity.class);
         classList.add(RecordListActivity.class);
+        classList.add(WeatherActivity.class);
         return classList;
     }
 }

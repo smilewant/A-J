@@ -1,14 +1,14 @@
 package com.further.x.record
 
-import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.further.foundation.BaseActivity
-import com.further.x.record.room.RecordData
-import com.further.x.record.room.test
+import com.further.x.R
+import com.further.x.room.RecordData
+import com.further.x.room.test
 import com.further.x.record.vo.RecordItemVo
 import kotlin.concurrent.thread
 
@@ -23,15 +23,12 @@ class RecordListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_record_list)
 
-
         var t: test = test()
         thread {
             t.createDb(this)
             t.recordDao?.insert(RecordData("12345", "", "", "content"))
 
         }
-
-
 
         var items = ArrayList<RecordItemVo>()
 

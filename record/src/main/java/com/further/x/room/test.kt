@@ -1,4 +1,4 @@
-package com.further.x.record.room
+package com.further.x.room
 
 import android.content.Context
 import androidx.room.Room

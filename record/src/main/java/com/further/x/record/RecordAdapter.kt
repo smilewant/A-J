@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.further.x.BR
+import com.further.x.R
 import com.further.x.record.vo.RecordItemVo
 
 

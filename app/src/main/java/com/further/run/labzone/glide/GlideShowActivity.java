@@ -54,7 +54,7 @@ public class GlideShowActivity extends AppCompatActivity {
 //                showSharePopWindow();
             }
         });
-
+        request();
          salesPromotionDialog = new BaseDialog();
     }
 

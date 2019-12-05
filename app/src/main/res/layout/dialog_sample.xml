@@ -44,6 +44,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recycler_view" />
 
+    <TextView
+        android:id="@+id/progress_text"
+        style="@style/style_13_333333"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:text="45%"
+        app:layout_constraintBottom_toBottomOf="@id/seek_bar"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seek_bar" />
+
     <SeekBar
         android:id="@+id/seek_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -54,20 +66,11 @@
         android:paddingStart="10dp"
         android:progressDrawable="@drawable/progress_bg"
         android:thumb="@mipmap/airplane"
+        android:splitTrack="false"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/progress_text"
         app:layout_constraintTop_toBottomOf="@id/tip" />
 
-    <TextView
-        android:id="@+id/progress_text"
-        style="@style/style_13_333333"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:gravity="center_vertical"
-        android:text="45%"
-        app:layout_constraintBottom_toBottomOf="@id/seek_bar"
-        app:layout_constraintLeft_toRightOf="@id/seek_bar"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/seek_bar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
