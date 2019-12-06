@@ -27,7 +27,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     api 'com.squareup.okhttp3:okhttp:3.4.1'
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.google.code.gson:gson:2.8.0'
     api project(':common_ui')
 
     testImplementation 'junit:junit:4.12'

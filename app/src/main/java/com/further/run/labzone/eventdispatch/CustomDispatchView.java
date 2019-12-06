@@ -86,7 +86,7 @@ public class CustomDispatchView extends View {
         if ( x > y ) {
             paint.setColor(getResources().getColor(R.color.color_D30775));
         } else {
-            paint.setColor(getResources().getColor(R.color.color_0000000));
+            paint.setColor(getResources().getColor(R.color.color_000000));
         }
         canvas.drawCircle(200 + x, 200 + y, 50, paint);
         canvas.drawCircle(100 + x, 100 + y, 50, paint);

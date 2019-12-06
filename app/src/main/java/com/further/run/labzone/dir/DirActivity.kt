@@ -1,18 +1,14 @@
 package com.further.run.labzone.dir
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.view.View
 import android.widget.TextView
 import com.further.run.R
-import com.further.run.labzone.recyclerview.DateVo
 import com.further.run.util.ProjectUtil
-import com.further.run.util.RVAdapter
-import com.further.run.util.RVHolder
-import java.util.*
+import com.further.foundation.adapter.RVAdapter
+import com.further.foundation.adapter.RVHolder
 
 /**
  * Created by Zion

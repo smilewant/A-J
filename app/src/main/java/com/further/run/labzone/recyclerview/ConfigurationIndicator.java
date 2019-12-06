@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.further.run.R;
 import com.further.foundation.util.MobileUtil;
-import com.further.run.util.RVAdapter;
-import com.further.run.util.RVHolder;
+import com.further.foundation.adapter.RVAdapter;
+import com.further.foundation.adapter.RVHolder;
 
 import java.util.List;
 

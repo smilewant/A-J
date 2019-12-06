@@ -3,9 +3,12 @@ package com.further.run.main;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,8 +24,8 @@ import com.further.run.R;
 import com.further.foundation.util.LogUtil;
 import com.further.foundation.util.MobileUtil;
 import com.further.run.util.ProjectUtil;
-import com.further.run.util.RVAdapter;
-import com.further.run.util.RVHolder;
+import com.further.foundation.adapter.RVAdapter;
+import com.further.foundation.adapter.RVHolder;
 
 import java.io.File;
 import java.net.NetworkInterface;
@@ -135,6 +138,13 @@ public class MainActivity extends BaseActivity {
         RecyclerView mMainRV = findViewById(R.id.main_recyler_view);
 
         mMainRV.setLayoutManager(new LinearLayoutManager(this));
+        mMainRV.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                super.getItemOffsets(outRect, view, parent, state);
+                outRect.set(0,0,0,MobileUtil.dip2px(10));
+            }
+        });
         RVAdapter mRvAdapter = new RVAdapter<Class<?>>(this, ProjectUtil.getClasses(), R.layout.item_main_rv) {
             @Override
             public int getLayoutResId(Class<?> data) {

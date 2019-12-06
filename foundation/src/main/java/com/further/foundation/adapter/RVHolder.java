@@ -1,4 +1,4 @@
-package com.further.run.util;
+package com.further.foundation.adapter;
 
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
