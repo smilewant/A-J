@@ -167,8 +167,8 @@ public class MainActivity extends BaseActivity {
 
                         } else {
                             intent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-
                             startActivity(intent);
+                            overridePendingTransition(R.anim.dt_in_from_left, R.anim.dt_out_to_left);
 
 
                         }
