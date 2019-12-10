@@ -3,6 +3,6 @@
     <application>
         <activity android:name="com.further.x.record.RecordListActivity"/>
         <activity android:name="com.further.x.weather.WeatherActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Translucent"/>
     </application>
 </manifest>

@@ -14,9 +14,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.further.run.R;
-import com.further.run.customview.BaseDialog;
 import com.further.foundation.util.LogUtil;
 import com.further.foundation.util.MobileUtil;
+import com.further.run.customview.ProgressDialog;
 
 import java.io.IOException;
 
@@ -31,7 +31,7 @@ import okhttp3.Response;
  * 2018/6/20.
  */
 public class GlideShowActivity extends AppCompatActivity {
-    private BaseDialog salesPromotionDialog;
+    private ProgressDialog salesPromotionDialog;
     private TextView clickTV;
     public void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +55,7 @@ public class GlideShowActivity extends AppCompatActivity {
             }
         });
         request();
-         salesPromotionDialog = new BaseDialog();
+         salesPromotionDialog = new ProgressDialog();
     }
 
     private void request(){

@@ -6,63 +6,95 @@
     android:background="@color/color_e4e4e4">
 
 
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/color_71728F"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/bv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/bg"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="-20dp"
-                android:background="@color/color_71728F"
-                app:layout_constraintBottom_toBottomOf="@id/bv"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/current_weather_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/weather_sunny"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="100dp"
-                android:text="上海"
-                android:textColor="@color/color_000000"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/current_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_10"
+        android:textColor="@color/color_333333"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/current_weather_icon"
+        app:layout_constraintLeft_toRightOf="@id/current_weather_icon" />
 
-            <TextView
-                android:id="@+id/weather"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:gravity="right"
-                android:text="晴\n12~16\n2019-12-02"
-                android:textColor="@color/color_333333"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/name"
-                app:layout_constraintRight_toRightOf="parent" />
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="100dp"
+        android:text="上海"
+        android:textColor="@color/color_000000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <View
-                android:id="@+id/bv"
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_marginTop="40dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="@dimen/space_10"
+        android:textColor="@color/color_333333"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_20"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="@dimen/space_20"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/name" />
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:gravity="right"
+        android:text="晴\n12~16\n2019-12-02"
+        android:textColor="@color/color_333333"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/date"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/bv"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/space_20"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
