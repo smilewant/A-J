@@ -8,6 +8,8 @@ import java.io.IOException
 /**
  * Created by Zion
  * 2019/12/3.
+ *
+ * 缓存
  */
 object HttpRequest {
 

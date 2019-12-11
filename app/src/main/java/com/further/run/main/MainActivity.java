@@ -11,6 +11,7 @@ import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
@@ -137,12 +138,12 @@ public class MainActivity extends BaseActivity {
 
         RecyclerView mMainRV = findViewById(R.id.main_recyler_view);
 
-        mMainRV.setLayoutManager(new LinearLayoutManager(this));
+        mMainRV.setLayoutManager(new GridLayoutManager(this, 2));
         mMainRV.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override
             public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
                 super.getItemOffsets(outRect, view, parent, state);
-                outRect.set(0,0,0,MobileUtil.dip2px(10));
+                outRect.set(0,0,MobileUtil.dip2px(10),MobileUtil.dip2px(10));
             }
         });
         RVAdapter mRvAdapter = new RVAdapter<Class<?>>(this, ProjectUtil.getClasses(), R.layout.item_main_rv) {

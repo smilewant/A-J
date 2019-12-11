@@ -6,6 +6,7 @@ package com.further.run.concurrent;
 //import com.further.leetcode.Solution6;
 //import com.further.leetcode.Solution7;
 import com.further.algorithm.recursion.CoinSum;
+import com.further.leetcode.Solution784;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -57,8 +58,8 @@ class Test {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
-//        Solution25 solution25 = new Solution25();
-//        solution25.swap();
+        Solution784 solution25 = new Solution784();
+        solution25.letterCasePermutation("a1b2");
 
         CoinSum.sum();
         Event.A.name();
