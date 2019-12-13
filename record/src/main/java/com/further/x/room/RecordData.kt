@@ -15,6 +15,4 @@ data class RecordData (
     val date : String,
     val name :String,
     val content: String
-){
-
-}
+)

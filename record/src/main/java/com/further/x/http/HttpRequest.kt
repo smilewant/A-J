@@ -4,6 +4,7 @@ import android.os.Message
 import okhttp3.*
 import okio.Buffer
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by Zion
@@ -12,11 +13,19 @@ import java.io.IOException
  * 缓存
  */
 object HttpRequest {
-
-
+    private var cache : Cache ?= null
+    fun setC(cache : Cache) {
+        this.cache = cache
+    }
     fun get(url: String, handler: ResponseHandler) {
-        var client = OkHttpClient()//OkHttpClient 和 OkHttpClient().newBuilder().build()感觉并无区别，不知道为啥要写两种
-        var request = Request.Builder().get().url(url).build()
+        var client = OkHttpClient().newBuilder().cache(cache).build();//OkHttpClient 和 OkHttpClient().newBuilder().build()感觉并无区别，不知道为啥要写两种
+
+        var request = Request.Builder().get().url(url)
+                .cacheControl(CacheControl.Builder()
+//                        .onlyIfCached()
+                .maxStale(60, TimeUnit.MINUTES)
+                .maxAge(5, TimeUnit.DAYS).build())
+                .build()
         var call = client.newCall(request)
         call.enqueue(object : Callback {
             override fun onFailure(call: Call?, e: IOException?) {

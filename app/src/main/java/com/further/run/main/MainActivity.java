@@ -27,6 +27,7 @@ import com.further.foundation.util.MobileUtil;
 import com.further.run.util.ProjectUtil;
 import com.further.foundation.adapter.RVAdapter;
 import com.further.foundation.adapter.RVHolder;
+import com.further.x.city.CityCatch;
 
 import java.io.File;
 import java.net.NetworkInterface;
@@ -132,7 +133,9 @@ public class MainActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                txt.setText("change");
+
+                CityCatch.INSTANCE.catch1(MainActivity.this);
+//                txt.setText("change");
             }
         }).start();
 

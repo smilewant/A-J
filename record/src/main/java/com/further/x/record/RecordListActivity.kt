@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.further.foundation.BaseActivity
 import com.further.x.R
 import com.further.x.room.RecordData
-import com.further.x.room.test
 import com.further.x.record.vo.RecordItemVo
+import com.further.x.room.AppDatabase
 import kotlin.concurrent.thread
 
 
@@ -23,24 +23,16 @@ class RecordListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_record_list)
 
-        var t: test = test()
+        val db =  AppDatabase.getInstance(this)
         thread {
-            t.createDb(this)
-            t.recordDao?.insert(RecordData("12345", "", "", "content"))
-
+            db.recordDao()?.insert(RecordData("12345", "", "", "content"))
         }
 
         var items = ArrayList<RecordItemVo>()
 
 
         for (i in 0..4) {
-            items.add(RecordItemVo().apply {
-                var r = t.recordDao?.getRecords()
-                name = ""
-                date = "2019-11-22"
-                content = r?.content?:""
-                id = System.nanoTime().toString()
-            })
+            items.apply {  db.recordDao()?.getRecords()}
         }
         var recordRecyclerView : RecyclerView = findViewById(R.id.record_recycler)
         recordRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -53,13 +45,7 @@ class RecordListActivity : BaseActivity() {
 
         findViewById<ImageView>(R.id.add).setOnClickListener {
             thread {
-                items.add(RecordItemVo().apply {
-                    var r = t.recordDao?.getRecords()
-                    name = ""
-                    date = "2019-11-21"
-                    content =r?.content?:""
-                    id = System.nanoTime().toString()
-                })
+                items.apply {  db.recordDao()?.getRecords()}
 //            adapter.mItems = items
 
             }

@@ -1,4 +1,4 @@
-package com.further.run.labzone.recyclerview;
+package com.further.foundation;
 
 import android.view.View;
 

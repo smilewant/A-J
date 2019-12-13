@@ -16,7 +16,7 @@ import java.util.List;
 public abstract class RVAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<T> datas = new ArrayList<>();
     private RVHolder rvHolder;
-    private Context mContext;
+    protected Context mContext;
     private int resourceID;
 
     public RVAdapter(Context mContext, int resourceID){
@@ -47,6 +47,10 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RecyclerView.Vie
         return datas.size();
     }
 
+
+    public T getItem(int position) {
+        return datas.get(position);
+    }
 
     @Override
     public int getItemViewType(int position) {

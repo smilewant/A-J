@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.further.foundation.GroupListener;
+import com.further.foundation.SectionDecoration;
 import com.further.run.R;
 import com.further.foundation.util.LogUtil;
 import com.further.foundation.util.MobileUtil;

@@ -11,7 +11,7 @@ import androidx.room.Query
 @Dao
 interface RecordDao {
     @Query("SELECT * FROM record ORDER BY id")
-    fun getRecords():   RecordData
+    fun getRecords(): List<RecordData>
 
 
     @Insert

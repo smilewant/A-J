@@ -4,5 +4,7 @@
         <activity android:name="com.further.x.record.RecordListActivity"/>
         <activity android:name="com.further.x.weather.WeatherActivity"
             android:theme="@style/Translucent"/>
+        <activity android:name=".city.CityChoiceActivity"
+            android:theme="@style/Translucent"/>
     </application>
 </manifest>
