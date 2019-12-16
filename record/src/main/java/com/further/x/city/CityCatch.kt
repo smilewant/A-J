@@ -1,10 +1,10 @@
 package com.further.x.city
 
 import android.content.Context
+import android.content.res.AssetManager
 import com.further.x.room.AppDatabase
 import com.further.x.room.CityData
-import java.io.File
-import java.io.FileInputStream
+import java.io.IOException
 import java.util.*
 
 /**
@@ -14,11 +14,12 @@ import java.util.*
 object CityCatch {
     fun catch1(context: Context) {
         val db = AppDatabase.getInstance(context)
-        var cityFile = File(context.externalCacheDir, "city.txt")
-        if (cityFile.isFile) {
-            var scan = Scanner(FileInputStream(cityFile), "utf-8")
+
+        var asset: AssetManager = context.resources.assets
+        try {
+            var scan = Scanner(asset.open("city.txt"), "utf-8")
             var line: String? = null
-           var i : Int = 0
+            var i = 0
             while (scan.hasNextLine()) {
                 line = scan.nextLine()
                 if (!line.trim().isEmpty()) {
@@ -32,7 +33,7 @@ object CityCatch {
                             city.citykey = i.toString()
                             i++
                         }
-                        city.citykey.endsWith("01") && !city.citykey.equals("101021101") ->{
+                        city.citykey.endsWith("01") && !city.citykey.equals("101021101") -> {
 
                             city.parent = "1"
                         }
@@ -48,10 +49,14 @@ object CityCatch {
                     db.getCity().insert(city)
                 }
             }
+        } catch (e: IOException){
+
         }
+
+
     }
 
-    fun get(context: Context) : List<CityData>{
+    fun get(context: Context): List<CityData> {
 
         return AppDatabase.getInstance(context)
                 .getCity().getCitys()

@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import com.further.foundation.util.LogUtil;
 import com.further.foundation.util.MobileUtil;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
@@ -31,11 +33,16 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
         int pos = parent.getChildAdapterPosition(view);
         String groupId = getGroupName(pos);
         if (groupId == null) return;
-//        if (pos == 0 || isFirstGroup(pos)){
-//            outRect.top = mGroupHeight;
-//        }
+
+
+        if (parent.getLayoutManager() instanceof GridLayoutManager) {
+            GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
+            int size  = layoutManager.getSpanSizeLookup().getSpanSize(pos);
+            int index = layoutManager.getSpanSizeLookup().getSpanIndex(pos, layoutManager.getSpanCount()) + 1;
+            if (index  % (layoutManager.getSpanCount() / size) != 0) outRect.right = MobileUtil.dip2px(10);
+        }
         outRect.bottom = MobileUtil.dip2px(10);
-        outRect.right = MobileUtil.dip2px(10);
+
     }
 
     @Override
@@ -47,49 +54,38 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
         int left = parent.getPaddingLeft();
         int right = parent.getWidth() - parent.getPaddingRight();
 
-        String preGroupName;
-        String currentGroupName = null;
+        int firstVisibleItemPosition = 0;
+        if (parent.getLayoutManager() instanceof GridLayoutManager) {
+            firstVisibleItemPosition = ((GridLayoutManager) parent.getLayoutManager()).findFirstVisibleItemPosition();
+        } else if (parent.getLayoutManager() instanceof LinearLayoutManager) {
+            firstVisibleItemPosition = ((LinearLayoutManager) parent.getLayoutManager()).findFirstVisibleItemPosition();
+        }
 
+        String currentGroupName = getGroupName(firstVisibleItemPosition);
+        int viewTop = mGroupHeight;
         for (int i = 0; i < childCount; i++) {
             View view = parent.getChildAt(i);
             int position = parent.getChildAdapterPosition(view);
-
-
-            preGroupName = currentGroupName;
-            currentGroupName = getGroupName(position);
-
-            if (currentGroupName.isEmpty() || TextUtils.equals(preGroupName, currentGroupName)) {
-                continue;
+            if (!currentGroupName.equals(getGroupName(position))) {
+                viewTop = view.getTop();
+                break;
             }
-            LogUtil.e("Section i : " + i + " position " + position );
-            LogUtil.e("Section preGroupName : " + preGroupName + " currentGroupName " + currentGroupName );
-            int viewBottom = view.getBottom();
-            int top =  Math.max(mGroupHeight+MobileUtil.dip2px(10), view.getTop());
-            if(position + 1 < itemCount) {
-
-                String nextGroupName = getGroupName(position + 1);
-                if (!currentGroupName.equals(nextGroupName)) {
-                    top = viewBottom ;
-                }
-                LogUtil.e("Section nextGroupName : " + nextGroupName + " viewBottom " + viewBottom );
-            }
-            LogUtil.e("Section top : " + top + " view.getTop() " + view.getTop() );
-            LogUtil.e("Section =============================================="   );
-            View groupView = getGroupView(position);
-            if (groupView == null) return;
-            ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, mGroupHeight);
-            groupView.setLayoutParams(layoutParams);
-            groupView.setDrawingCacheEnabled(true);
-            groupView.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-            groupView.layout(0, 0, right, mGroupHeight);
-            groupView.buildDrawingCache();
-            Bitmap bt = groupView.getDrawingCache();
-            int marginLeft = isAlignLeft ? 0 : right - groupView.getMeasuredWidth();
-            int finalTop = top- mGroupHeight -MobileUtil.dip2px(10);
-
-            c.drawBitmap(bt, left + marginLeft, finalTop, null);
         }
+        View groupView = getGroupView(firstVisibleItemPosition);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, mGroupHeight);
+        groupView.setLayoutParams(layoutParams);
+        groupView.setDrawingCacheEnabled(true);
+        groupView.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+        groupView.layout(0, 0, right, mGroupHeight);
+        groupView.buildDrawingCache();
+        Bitmap bt = groupView.getDrawingCache();
+        int marginLeft = isAlignLeft ? 0 : right - groupView.getMeasuredWidth();
+        int finalTop = 0;
+        if (viewTop < mGroupHeight) {
+            finalTop = viewTop - mGroupHeight;
+        }
+        c.drawBitmap(bt, left + marginLeft, finalTop, null);
     }
 
     private boolean isFirstGroup(int pos) {

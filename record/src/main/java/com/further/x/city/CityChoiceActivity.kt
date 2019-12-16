@@ -69,7 +69,8 @@ class CityChoiceActivity : BaseActivity() {
                 var textView = TextView(this@CityChoiceActivity)
                 textView.text = getGroupName(pos)
                 textView.height = MobileUtil.dip2px(40)
-                textView.setBackgroundResource(R.drawable.border_ff7f6a_corner)
+                textView.width = MobileUtil.getScreenWidth(this@CityChoiceActivity) - MobileUtil.dip2px(30)
+                textView.setBackgroundResource(R.drawable.border_3f51b5_corner)
                 textView.gravity = Gravity.CENTER
                 return textView
             }
@@ -90,9 +91,9 @@ class CityChoiceActivity : BaseActivity() {
     fun getParentName(pos: Int, citys: List<CityData>): String {
         var name = ""
 
-        for (i in 0 until pos) {
+        for (i in 0 until pos + 1) {
 
-            if (citys[i].parent == "0" && pos > i) {
+            if (citys[i].parent == "0") {
                 name = citys[i].city
             }
 
