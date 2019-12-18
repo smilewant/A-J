@@ -1,7 +1,6 @@
 package com.further.x.weather.vo
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 import com.further.x.R
@@ -43,9 +42,12 @@ class DayWeatherVo {
             "阴",
             "多云" -> ContextCompat.getDrawable(context, R.drawable.weather_cloudy)
             "小雨" -> ContextCompat.getDrawable(context, R.drawable.weather_s_rain)
+            "雪",
+            "小雪" -> ContextCompat.getDrawable(context, R.drawable.weather_snow)
             else -> ContextCompat.getDrawable(context, R.drawable.weather_sunny)
         }
     }
+
     fun weatherItemIcon(context: Context): Drawable? {
 
         return when (type) {
@@ -53,6 +55,8 @@ class DayWeatherVo {
             "阴",
             "多云" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_16)
             "小雨" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_19)
+            "雪",
+            "小雪" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_31)
             else -> ContextCompat.getDrawable(context, R.drawable.weather_icon_01)
         }
     }
@@ -63,6 +67,8 @@ class DayWeatherVo {
             "阴",
             "多云" -> R.color.color_eda915
             "小雨" -> R.color.color_eda915
+            "雪",
+            "小雪" -> R.color.color_eda915
             else -> R.color.color_eda915
         })
     }
@@ -73,6 +79,8 @@ class DayWeatherVo {
             "阴",
             "多云" -> R.color.color_9db4d1
             "小雨" -> R.color.color_9db4d1
+            "雪",
+            "小雪" -> R.color.color_9db4d1
             else -> R.color.color_79b5f7
         })
     }
@@ -82,7 +90,9 @@ class DayWeatherVo {
             "晴" -> ContextCompat.getDrawable(context, R.drawable.sunny_bg)
             "阴",
             "多云" -> ContextCompat.getDrawable(context, R.drawable.winter_cloud_bg)
-            "小雨" -> ContextCompat.getDrawable(context, R.drawable.rain_item_bg)
+            "小雨" -> ContextCompat.getDrawable(context, R.drawable.rain_item_bg_1)
+            "雪",
+            "小雪" -> ContextCompat.getDrawable(context, R.drawable.winter_sunny_bg)
             else -> ContextCompat.getDrawable(context, R.drawable.sunny_bg)
         }
 

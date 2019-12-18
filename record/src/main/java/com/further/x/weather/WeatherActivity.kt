@@ -6,11 +6,13 @@ import android.graphics.Rect
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.further.foundation.BaseActivity
+import com.further.foundation.util.ConstantUtil
 import com.further.foundation.util.JsonUtil
 import com.further.foundation.util.MobileUtil
 import com.further.x.R
@@ -37,7 +39,7 @@ class WeatherActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_weather)
         statusBarInit()
-        startAnimation()
+
         recycler.layoutManager = LinearLayoutManager(this@WeatherActivity)
         recycler.addItemDecoration(object : RecyclerView.ItemDecoration() {
 
@@ -47,14 +49,24 @@ class WeatherActivity : BaseActivity() {
             }
         })
 
+        requestData("101020100")
+    }
+
+    private fun requestData(key : String) {
+        if(key.isEmpty()) return
+        startAnimation()
         val cache = Cache(this.externalCacheDir, 1024 * 100)
         HttpRequest.setC(cache)
-        HttpRequest.get(Url.WEATHER + "101020100", ResponseHandler(object : HttpCallback {
+        HttpRequest.get(Url.WEATHER + key, ResponseHandler(object : HttpCallback {
             override fun success(response: String) {
 
                 stopAnimation()
                 var weatherModel = JsonUtil.parseJson(response, WeatherModel::class.java)
                 weatherModel?.let {
+                    if (weatherModel.status != "200") {
+                        Toast.makeText(this@WeatherActivity, weatherModel.message, Toast.LENGTH_SHORT).show()
+                        return
+                    }
                     binding.cityInfo = weatherModel.cityInfo
                     binding.firstDayWeather = weatherModel.data?.forecast?.get(0)
                     recycler.adapter = weatherModel.data?.forecast?.drop(1)?.let { WeatherItemAdapter(this@WeatherActivity, it) }
@@ -70,9 +82,21 @@ class WeatherActivity : BaseActivity() {
         }))
     }
 
-    fun onClickTransfer(view: View) {
-        startActivity(Intent(this, CityChoiceActivity::class.java));
+    fun onClickToCityChoice(view: View) {
+        startActivityForResult(Intent(this, CityChoiceActivity::class.java), ConstantUtil.R_CODE)
+    }
 
+    override fun onActivityResult(requestCode : Int, resultCode : Int,  data : Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+        data?.let {
+            var key = it.getStringExtra(ConstantUtil.CITY_KEY)
+            requestData(key)
+        }
+
+
+    }
+
+    fun onClickTransfer(view: View) {
 
         recycler.layoutManager = if (transfer)
             LinearLayoutManager(this@WeatherActivity)

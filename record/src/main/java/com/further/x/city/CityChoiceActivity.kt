@@ -1,5 +1,6 @@
 package com.further.x.city
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -12,6 +13,7 @@ import com.further.foundation.GroupListener
 import com.further.foundation.SectionDecoration
 import com.further.foundation.adapter.RVAdapter
 import com.further.foundation.adapter.RVHolder
+import com.further.foundation.util.ConstantUtil
 import com.further.foundation.util.LogUtil
 import com.further.foundation.util.MobileUtil
 import com.further.x.R
@@ -45,6 +47,16 @@ class CityChoiceActivity : BaseActivity() {
                     }
                     "1" -> holder.itemView.setBackgroundResource(R.drawable.border_79b5f7_corner)
                     "2" -> holder.itemView.setBackgroundResource(R.drawable.border_e4e4e4_corner)
+                }
+                holder.itemView.setOnClickListener {
+                    data?.let {
+                        if(data.parent == "0") return@setOnClickListener
+                        var intent = Intent()
+                        intent.putExtra(ConstantUtil.CITY_KEY, data.citykey)
+                        setResult( ConstantUtil.R_CODE, intent)
+                        finish()
+                    }
+
                 }
             }
 
