@@ -40,19 +40,16 @@ import java.util.List;
  */
 public class Solution123 {
     public int maxProfit(int[] prices) {
-        if (prices.length < 2) return 0;
-        List<Integer> indexL = new ArrayList<>();
-        int min = 0;
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] <= prices[i-1]) {
-                min = prices[i];
-            }
-            if (prices[i] > min && min != 0) {
-                indexL.add(i-1);
-                indexL.add(i);
-            }
+        int n = prices.length;
+        int dp_i_0 = 0, dp_i_1 = Integer.MIN_VALUE;
+        int dp_pre_0 = 0; // 代表 dp[i-2][0]
+        for (int i = 0; i < n; i++) {
+            int temp = dp_i_0;
+            dp_i_0 = Math.max(dp_i_0, dp_i_1 + prices[i]);
+            dp_i_1 = Math.max(dp_i_1, dp_pre_0 - prices[i]);
+            dp_pre_0 = temp;
         }
-        return maxP(Arrays.copyOfRange(prices, indexL.get(0), indexL.get(indexL.size())));
+        return dp_i_0;
     }
     public int maxP(int[] prices) {
         if (prices.length < 2) return 0;

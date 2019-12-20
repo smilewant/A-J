@@ -9,4 +9,8 @@ class CityInfoVo {
     var citykey: String = ""
     var parent: String = ""
     var updateTime: String = ""
+
+    fun getShowCity() : String{
+        return parent + ' ' + city
+    }
 }
