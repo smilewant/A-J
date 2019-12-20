@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.further.foundation.BaseActivity
 import com.further.x.R
-import com.further.x.room.RecordData
 import com.further.x.record.vo.RecordItemVo
 import com.further.x.room.AppDatabase
+import com.further.x.room.RecordData
 import kotlin.concurrent.thread
 
 
@@ -18,23 +18,19 @@ import kotlin.concurrent.thread
  * 2019/11/19.
  */
 class RecordListActivity : BaseActivity() {
-    lateinit var adapter : RecordAdapter
+    lateinit var adapter: RecordAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_record_list)
 
-        val db =  AppDatabase.getInstance(this)
+        val db = AppDatabase.getInstance(this)
         thread {
             db.recordDao()?.insert(RecordData("12345", "", "", "content"))
         }
 
         var items = ArrayList<RecordItemVo>()
 
-
-        for (i in 0..4) {
-            items.apply {  db.recordDao()?.getRecords()}
-        }
-        var recordRecyclerView : RecyclerView = findViewById(R.id.record_recycler)
+        var recordRecyclerView: RecyclerView = findViewById(R.id.record_recycler)
         recordRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
 //         adapter = DataBindingRecyclerViewAdapter(this, R.layout.record_item, BR.item, items)
@@ -45,13 +41,16 @@ class RecordListActivity : BaseActivity() {
 
         findViewById<ImageView>(R.id.add).setOnClickListener {
             thread {
-                items.apply {  db.recordDao()?.getRecords()}
+                items.apply { db.recordDao()?.getRecords() }
 //            adapter.mItems = items
 
             }
             Thread.sleep(100)
             adapter.notifyDataSetChanged()
             Toast.makeText(this, "click", Toast.LENGTH_SHORT).show()
+
+            val dialog = CalendarFragment()
+            dialog.show(supportFragmentManager, "")
 //            AsyncTask.execute {  }
 
         }
