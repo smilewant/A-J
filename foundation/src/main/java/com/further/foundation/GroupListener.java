@@ -9,4 +9,5 @@ import android.view.View;
 public interface GroupListener {
     String getGroupName(int pos);
     View getGroupView(int pos);
+    View getFloatView();
 }

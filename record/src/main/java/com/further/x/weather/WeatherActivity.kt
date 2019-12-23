@@ -35,6 +35,7 @@ import okhttp3.Cache
 class WeatherActivity : BaseActivity() {
     private var transfer: Boolean = false
     private lateinit var binding: ActivityWeatherBinding
+    private var currentPosition = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_weather)
@@ -49,17 +50,17 @@ class WeatherActivity : BaseActivity() {
             }
         })
 
-        requestData("101020100")
+        requestData("101020100", 0)
     }
 
-    private fun requestData(key : String) {
+    private fun requestData(key : String, position : Int) {
         if(key.isEmpty()) return
         startAnimation()
         val cache = Cache(this.externalCacheDir, 1024 * 100)
         HttpRequest.setC(cache)
         HttpRequest.get(Url.WEATHER + key, ResponseHandler(object : HttpCallback {
             override fun success(response: String) {
-
+                currentPosition = position
                 stopAnimation()
                 var weatherModel = JsonUtil.parseJson(response, WeatherModel::class.java)
                 weatherModel?.let {
@@ -83,14 +84,16 @@ class WeatherActivity : BaseActivity() {
     }
 
     fun onClickToCityChoice(view: View) {
-        startActivityForResult(Intent(this, CityChoiceActivity::class.java), ConstantUtil.R_CODE)
+        var intent = Intent(this, CityChoiceActivity::class.java)
+        intent.putExtra(ConstantUtil.CITY_POSITION, currentPosition)
+        startActivityForResult(intent, ConstantUtil.R_CODE)
     }
 
     override fun onActivityResult(requestCode : Int, resultCode : Int,  data : Intent?){
         super.onActivityResult(requestCode, resultCode, data)
         data?.let {
             var key = it.getStringExtra(ConstantUtil.CITY_KEY)
-            requestData(key)
+            requestData(key, it.getIntExtra(ConstantUtil.CITY_POSITION, 0))
         }
 
 

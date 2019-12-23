@@ -111,6 +111,11 @@ public class DoubleRecyclerViewActivity extends AppCompatActivity {
                 recyclerView.setAdapter(adapter);
                 return recyclerView;
             }
+
+            @Override
+            public View getFloatView() {
+                return null;
+            }
         }).setGroupHeight(MobileUtil.dip2px(40)).build());
         RVAdapter mRvAdapter = new RVAdapter<Class<?>>(this, ProjectUtil.getClasses(), R.layout.child_item_double_activity) {
             @Override

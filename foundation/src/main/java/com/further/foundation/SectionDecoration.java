@@ -2,12 +2,13 @@ package com.further.foundation;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.further.foundation.util.LogUtil;
 import com.further.foundation.util.MobileUtil;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -22,9 +23,19 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
     private GroupListener mListener;
     private int mGroupHeight = 0;
     private boolean isAlignLeft = true;
+    private Paint mTextPaint;
+    private Paint mCirclePaint;
 
     private SectionDecoration(GroupListener listener) {
         this.mListener = listener;
+        mTextPaint = new Paint();
+        mTextPaint.setColor(Color.WHITE);
+        mTextPaint.setTextSize(MobileUtil.dip2px(14));
+        mTextPaint.setAntiAlias(true);
+
+        mCirclePaint = new Paint();
+        mCirclePaint.setAntiAlias(true);
+        mCirclePaint.setColor(Color.RED);
     }
 
     @Override
@@ -37,9 +48,10 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
 
         if (parent.getLayoutManager() instanceof GridLayoutManager) {
             GridLayoutManager layoutManager = (GridLayoutManager) parent.getLayoutManager();
-            int size  = layoutManager.getSpanSizeLookup().getSpanSize(pos);
+            int size = layoutManager.getSpanSizeLookup().getSpanSize(pos);
             int index = layoutManager.getSpanSizeLookup().getSpanIndex(pos, layoutManager.getSpanCount()) + 1;
-            if (index  % (layoutManager.getSpanCount() / size) != 0) outRect.right = MobileUtil.dip2px(10);
+            if (index % (layoutManager.getSpanCount() / size) != 0)
+                outRect.right = MobileUtil.dip2px(10);
         }
         outRect.bottom = MobileUtil.dip2px(10);
 
@@ -59,6 +71,22 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
             firstVisibleItemPosition = ((GridLayoutManager) parent.getLayoutManager()).findFirstVisibleItemPosition();
         } else if (parent.getLayoutManager() instanceof LinearLayoutManager) {
             firstVisibleItemPosition = ((LinearLayoutManager) parent.getLayoutManager()).findFirstVisibleItemPosition();
+        }
+
+        if (firstVisibleItemPosition > 0) {
+//            c.drawCircle(MobileUtil.getScreenWidth(parent.getContext()) * 4 / 5, MobileUtil.getScreenHeight(parent.getContext()) * 4 / 5, MobileUtil.dip2px(16), mCirclePaint );
+//            c.drawText("上", MobileUtil.getScreenWidth(parent.getContext()) * 4 / 5 - MobileUtil.dip2px(7), MobileUtil.getScreenHeight(parent.getContext()) * 4 / 5 + MobileUtil.dip2px(4), mTextPaint );
+            if (getFloatView() != null) {
+                View floatView = getFloatView();
+                ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(MobileUtil.dip2px(40), MobileUtil.dip2px(40));
+                floatView.setLayoutParams(layoutParams);
+                floatView.setDrawingCacheEnabled(true);
+
+                floatView.layout(0, 0, MobileUtil.dip2px(40), MobileUtil.dip2px(40));
+                floatView.buildDrawingCache();
+                Bitmap btf = floatView.getDrawingCache();
+                c.drawBitmap(btf, MobileUtil.getScreenWidth(parent.getContext()) * 4 / 5, MobileUtil.getScreenHeight(parent.getContext()) * 4 / 5, null);
+            }
         }
 
         String currentGroupName = getGroupName(firstVisibleItemPosition);
@@ -105,6 +133,13 @@ public class SectionDecoration extends RecyclerView.ItemDecoration {
     private String getGroupName(int pos) {
         if (mListener != null) {
             return mListener.getGroupName(pos);
+        }
+        return null;
+    }
+
+    private View getFloatView( ) {
+        if (mListener != null) {
+            return mListener.getFloatView();
         }
         return null;
     }

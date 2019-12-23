@@ -2,6 +2,8 @@ package com.further.x.weather.vo
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import android.os.Parcel
+import android.os.Parcelable
 import androidx.core.content.ContextCompat
 import com.further.x.R
 
@@ -9,7 +11,7 @@ import com.further.x.R
  * Created by Zion
  * 2019/12/4.
  */
-class DayWeatherVo {
+class DayWeatherVo() : Parcelable{
     var date: String = ""
     var high: String = ""
     var low: String = ""
@@ -22,6 +24,21 @@ class DayWeatherVo {
     var fl: String = ""
     var type: String = ""
     var notice: String = ""
+
+    constructor(parcel: Parcel) : this() {
+        date = parcel.readString()
+        high = parcel.readString()
+        low = parcel.readString()
+        ymd = parcel.readString()
+        week = parcel.readString()
+        sunrise = parcel.readString()
+        sunset = parcel.readString()
+        aqi = parcel.readString()
+        fx = parcel.readString()
+        fl = parcel.readString()
+        type = parcel.readString()
+        notice = parcel.readString()
+    }
 
     fun weatherinfo1(): String {
         return fx + fl + "\n" + high + "/" + low + "\n  日出：" + sunrise + "日落 ：" + sunset
@@ -96,5 +113,34 @@ class DayWeatherVo {
             else -> ContextCompat.getDrawable(context, R.drawable.sunny_bg)
         }
 
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(date)
+        parcel.writeString(high)
+        parcel.writeString(low)
+        parcel.writeString(ymd)
+        parcel.writeString(week)
+        parcel.writeString(sunrise)
+        parcel.writeString(sunset)
+        parcel.writeString(aqi)
+        parcel.writeString(fx)
+        parcel.writeString(fl)
+        parcel.writeString(type)
+        parcel.writeString(notice)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<DayWeatherVo> {
+        override fun createFromParcel(parcel: Parcel): DayWeatherVo {
+            return DayWeatherVo(parcel)
+        }
+
+        override fun newArray(size: Int): Array<DayWeatherVo?> {
+            return arrayOfNulls(size)
+        }
     }
 }

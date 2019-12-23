@@ -30,6 +30,7 @@ public abstract class RVAdapter<T> extends RecyclerView.Adapter<RecyclerView.Vie
         this.resourceID = resourceID;
     }
 
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(viewType, parent, false);

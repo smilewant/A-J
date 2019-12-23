@@ -9,4 +9,5 @@ public class ConstantUtil {
 
 
     public static final String CITY_KEY = "city_key";
+    public static final String CITY_POSITION = "city_position";
 }
