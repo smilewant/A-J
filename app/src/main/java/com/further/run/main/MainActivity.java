@@ -133,9 +133,9 @@ public class MainActivity extends BaseActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                txt.setText("change");
 
                 CityCatch.INSTANCE.catch1(MainActivity.this);
-//                txt.setText("change");
             }
         }).start();
 

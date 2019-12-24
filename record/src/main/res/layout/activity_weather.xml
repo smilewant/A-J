@@ -32,10 +32,11 @@
 
         <ImageView
             android:id="@+id/current_weather_icon"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="50dp"
+            android:scaleType="fitXY"
             android:src="@{firstDayWeather.weatherIcon(context)}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

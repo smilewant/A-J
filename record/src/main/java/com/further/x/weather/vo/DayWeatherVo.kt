@@ -55,13 +55,13 @@ class DayWeatherVo() : Parcelable{
     fun weatherIcon(context: Context): Drawable? {
 
         return when (type) {
-            "晴" -> ContextCompat.getDrawable(context, R.drawable.weather_sunny)
-            "阴",
-            "多云" -> ContextCompat.getDrawable(context, R.drawable.weather_cloudy)
-            "小雨" -> ContextCompat.getDrawable(context, R.drawable.weather_s_rain)
+            "晴" -> ContextCompat.getDrawable(context, R.drawable.sunny)
+            "阴" -> ContextCompat.getDrawable(context, R.drawable.cloudy)
+            "多云" -> ContextCompat.getDrawable(context, R.drawable.cloud)
+            "小雨" -> ContextCompat.getDrawable(context, R.drawable.rain)
             "雪",
-            "小雪" -> ContextCompat.getDrawable(context, R.drawable.weather_snow)
-            else -> ContextCompat.getDrawable(context, R.drawable.weather_sunny)
+            "小雪" -> ContextCompat.getDrawable(context, R.drawable.snow)
+            else -> ContextCompat.getDrawable(context, R.drawable.sunny)
         }
     }
 

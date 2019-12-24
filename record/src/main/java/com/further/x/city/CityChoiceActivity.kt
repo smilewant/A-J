@@ -98,7 +98,7 @@ class CityChoiceActivity : BaseActivity() {
                 var imageView = ImageView(this@CityChoiceActivity)
 
                 imageView.setBackgroundResource(R.drawable.comm_arrow_up)
-                return  imageView;
+                return  imageView
             }
 
             override fun getGroupName(pos: Int): String? {
