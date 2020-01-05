@@ -52,7 +52,7 @@ class CalendarFragment : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        val window = dialog.window
+        val window = dialog?.window
         window?.let {
             var params = window.attributes
             params.height = MobileUtil.getScreenHeight(activity) * 50 / 100

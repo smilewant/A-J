@@ -18,7 +18,7 @@ class DirActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle? ) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dir)
-        findViewById<TextView>(R.id.dir_name).text = externalCacheDir.absolutePath;
+        findViewById<TextView>(R.id.dir_name).text = externalCacheDir?.absolutePath;
         val mMainRV = findViewById<RecyclerView>(R.id.recycler_view)
         mMainRV.layoutManager = LinearLayoutManager(this)
         mMainRV.adapter = object : RVAdapter<Class<*>>(this, ProjectUtil.getClasses(), R.layout.child_item_double_activity) {

@@ -1,5 +1,6 @@
 package com.further.foundation;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,11 @@ public class BaseActivity extends AppCompatActivity {
             loadingDialog = new BaseDialog();
         }
         loadingDialog.show(getSupportFragmentManager(), "loading");
+    }
+
+    public void startActivityForResult(Intent intent, int requestcode){
+        super.startActivityForResult(intent, requestcode);
+        overridePendingTransition(R.anim.dt_in_from_left, R.anim.dt_out_to_right);
     }
 
     public void finish(){
