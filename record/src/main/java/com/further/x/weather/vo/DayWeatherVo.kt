@@ -58,7 +58,8 @@ class DayWeatherVo() : Parcelable{
             "晴" -> ContextCompat.getDrawable(context, R.drawable.sunny)
             "阴" -> ContextCompat.getDrawable(context, R.drawable.cloudy)
             "多云" -> ContextCompat.getDrawable(context, R.drawable.cloud)
-            "小雨" -> ContextCompat.getDrawable(context, R.drawable.rain)
+            "小雨",
+            "中雨" -> ContextCompat.getDrawable(context, R.drawable.rain)
             "雪",
             "小雪" -> ContextCompat.getDrawable(context, R.drawable.snow)
             else -> ContextCompat.getDrawable(context, R.drawable.sunny)
@@ -71,6 +72,7 @@ class DayWeatherVo() : Parcelable{
             "晴" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_01)
             "阴",
             "多云" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_16)
+            "中雨",
             "小雨" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_19)
             "雪",
             "小雪" -> ContextCompat.getDrawable(context, R.drawable.weather_icon_31)
@@ -83,6 +85,7 @@ class DayWeatherVo() : Parcelable{
             "晴" -> R.color.color_eda915
             "阴",
             "多云" -> R.color.color_eda915
+            "中雨",
             "小雨" -> R.color.color_eda915
             "雪",
             "小雪" -> R.color.color_eda915
@@ -95,6 +98,7 @@ class DayWeatherVo() : Parcelable{
             "晴" -> R.color.color_79b5f7
             "阴",
             "多云" -> R.color.color_9db4d1
+            "中雨",
             "小雨" -> R.color.color_9db4d1
             "雪",
             "小雪" -> R.color.color_9db4d1
@@ -107,6 +111,7 @@ class DayWeatherVo() : Parcelable{
             "晴" -> ContextCompat.getDrawable(context, R.drawable.sunny_bg)
             "阴",
             "多云" -> ContextCompat.getDrawable(context, R.drawable.winter_cloud_bg)
+            "中雨",
             "小雨" -> ContextCompat.getDrawable(context, R.drawable.rain_item_bg_1)
             "雪",
             "小雪" -> ContextCompat.getDrawable(context, R.drawable.winter_sunny_bg)
