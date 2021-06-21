@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.further.common_ui.CarouselView;
 import com.further.foundation.BaseActivity;
 import com.further.run.R;
 import com.further.foundation.util.LogUtil;
@@ -28,6 +29,7 @@ import com.further.run.util.ProjectUtil;
 import com.further.foundation.adapter.RVAdapter;
 import com.further.foundation.adapter.RVHolder;
 import com.further.x.city.CityCatch;
+import com.further.x.parse.ParseUtil;
 
 import java.io.File;
 import java.net.NetworkInterface;
@@ -129,7 +131,16 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initView() {
+        CarouselView view = findViewById(R.id.carousel_view);
+        view.setData("1", "2");
+
         TextView txt = findViewById(R.id.txt);
+        txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUtil.INSTANCE.moshiParse();
+            }
+        });
         new Thread(new Runnable() {
             @Override
             public void run() {
